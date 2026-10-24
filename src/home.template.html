@@ -1,0 +1,503 @@
+<title>شاي وورق</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="شاي وورق: أربع توليفات شاي بالزعفران، لكل مزاج ولكل وقت. الطلب عبر واتساب.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a tea-house catalog. Peach paper, black ink, one red mark (the و of the logo).
+   Blends are numbered ١–٤ from heaviest to lightest, so the number is information. */
+:root {
+  --peach: #F0CAA9;      /* brand peach */
+  --paper: #F8E7D7;      /* lighter peach for long reading */
+  --card: #FCF2E8;
+  --ink: #1B1412;
+  --ink-soft: #5E4B43;
+  --line: #E0C2A8;
+  --red: #B44343;        /* brand red */
+  --on-red: #FBE9D9;
+  --red-band: #B44343;
+  --font-display: "Doran", "Amiri", "Noto Naskh Arabic", serif;
+  --font-body: "GT America Arabic", "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  --step--1: .875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.3rem;
+  --step-2: clamp(1.6rem, 1.2rem + 1.6vw, 2.2rem);
+  --step-3: clamp(2.2rem, 1.4rem + 3.4vw, 3.6rem);
+  --step-4: clamp(3rem, 1.6rem + 6vw, 5.6rem);
+  --wrap: 72rem;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --peach: #2B1E1A; --paper: #171110; --card: #221815;
+    --ink: #F4DEC9; --ink-soft: #C2A795; --line: #3D2C26;
+    --red: #DB6767; --on-red: #FBE9D9; --red-band: #8F3434;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --peach: #2B1E1A; --paper: #171110; --card: #221815;
+  --ink: #F4DEC9; --ink-soft: #C2A795; --line: #3D2C26;
+  --red: #DB6767; --on-red: #FBE9D9; --red-band: #8F3434;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  direction: rtl;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--peach);
+}
+a { color: inherit; }
+img, svg { max-width: 100%; }
+h1, h2, h3 { margin: 0; text-wrap: balance; font-weight: 700; }
+p { margin: 0; }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 4px; }
+
+.wrap {
+  max-width: var(--wrap); margin-inline: auto;
+  padding-left: var(--gutter-l); padding-right: var(--gutter-r);
+}
+.logo .ink { fill: currentColor; }
+.logo .swirl { fill: var(--red); }
+
+/* ---------- header ---------- */
+.site-header {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: var(--peach);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .wrap {
+  display: flex; align-items: center; gap: 1.5rem;
+  padding-block: .6rem;
+}
+.brand { display: inline-flex; color: var(--ink); }
+.brand svg { width: 2.6rem; height: auto; display: block; }
+.nav { display: flex; gap: 1.6rem; margin-inline-start: auto; }
+.nav a { text-decoration: none; font-weight: 500; font-size: var(--step--1); }
+.nav a:hover { color: var(--red); }
+
+.btn {
+  display: inline-flex; align-items: center; gap: .55rem;
+  padding: .7rem 1.25rem; border-radius: 999px;
+  font: 600 var(--step--1)/1 var(--font-body);
+  text-decoration: none; white-space: nowrap;
+  transition: transform .2s ease, background-color .2s ease;
+}
+.btn svg { width: 1.1em; height: 1.1em; flex: none; }
+.btn-red { background: var(--red); color: var(--on-red); }
+.btn-red:hover { transform: translateY(-2px); }
+.btn-line { border: 1.5px solid currentColor; color: var(--ink); }
+.btn-line:hover { background: var(--ink); color: var(--paper); }
+.site-header .btn { padding: .55rem 1rem; }
+
+/* ---------- hero ---------- */
+.hero { background: var(--peach); overflow: hidden; }
+.hero .wrap {
+  display: grid; grid-template-columns: 1.15fr .85fr; align-items: center;
+  gap: 3rem; padding-block: clamp(3rem, 7vw, 6rem);
+}
+.eyebrow {
+  display: inline-block; font-size: var(--step--1); font-weight: 600;
+  color: var(--red); letter-spacing: .02em; margin-bottom: 1rem;
+}
+.hero h1 {
+  font-family: var(--font-display); font-size: var(--step-4);
+  line-height: 1.25;
+}
+.hero h1 em { font-style: normal; color: var(--red); }
+.hero p.lede { max-width: 34rem; margin-top: 1.4rem; font-size: var(--step-1); line-height: 1.8; color: var(--ink-soft); }
+.hero .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+.hero-mark { position: relative; justify-self: center; width: min(100%, 22rem); color: var(--ink); }
+.hero-mark svg { width: 100%; height: auto; display: block; }
+.hero-mark .swirl { transform-origin: 82% 56%; animation: steep 9s ease-in-out infinite; }
+@keyframes steep { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-7deg); } }
+
+/* ---------- section scaffolding ---------- */
+.section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+.section-head { display: grid; gap: .8rem; max-width: 40rem; margin-bottom: clamp(2rem, 4vw, 3rem); }
+.section-head h2 { font-family: var(--font-display); font-size: var(--step-3); line-height: 1.3; }
+.section-head p { color: var(--ink-soft); }
+
+
+/* ---------- our story ---------- */
+.story .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 3.5rem; align-items: start; }
+.story h2 { font-family: var(--font-display); font-size: var(--step-3); line-height: 1.3; }
+.story .body { display: grid; gap: 1rem; margin-top: 1.4rem; max-width: 38rem; }
+.story .body p:last-child { color: var(--ink-soft); }
+.vision {
+  margin: 2rem 0 0; padding-inline-start: 1.2rem; border-inline-start: 3px solid var(--red);
+  font-family: var(--font-display); font-size: var(--step-1); line-height: 1.7; max-width: 36rem;
+}
+.vision cite { display: block; margin-top: .4rem; font: 500 var(--step--1)/1.4 var(--font-body); font-style: normal; color: var(--ink-soft); }
+.facts { display: grid; gap: 0; border-top: 2px solid var(--ink); }
+.fact { display: grid; grid-template-columns: 5.5rem 1fr; gap: 1rem; align-items: center; padding-block: 1.1rem; border-bottom: 1px solid var(--line); }
+.fact .v { font-family: var(--font-display); font-size: 2.6rem; line-height: 1; color: var(--red); text-align: center; }
+.fact b { display: block; font-size: var(--step-0); }
+.fact span { font-size: var(--step--1); color: var(--ink-soft); }
+.name-story { border-top: 1px solid var(--line); }
+@media (max-width: 820px) { .story .wrap { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+/* ---------- name story ---------- */
+.name-story .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+.etym { display: flex; flex-wrap: wrap; align-items: baseline; gap: .6rem 1rem; direction: ltr; justify-content: flex-end; }
+.etym span { font-family: var(--font-display); font-size: var(--step-3); line-height: 1; }
+.etym small { display: block; font: 500 var(--step--1)/1.4 var(--font-body); color: var(--ink-soft); margin-top: .35rem; direction: rtl; text-align: center; }
+.etym .arrow { color: var(--line); font-size: var(--step-2); font-family: var(--font-body); }
+.etym .ours span { color: var(--red); }
+.story-title { font-family: var(--font-display); font-size: var(--step-3); line-height: 1.3; margin-bottom: 1rem; }
+.name-story p { max-width: 34rem; }
+.name-story p + p { margin-top: 1rem; color: var(--ink-soft); }
+
+/* ---------- difference ---------- */
+.diffs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--line); }
+.diff { padding: 1.8rem 0 0; padding-inline-end: 2rem; }
+.diff + .diff { border-inline-start: 1px solid var(--line); padding-inline-start: 2rem; }
+.diff h3 { font-size: var(--step-1); margin-bottom: .6rem; }
+.diff p { color: var(--ink-soft); }
+.diff .tag { display: inline-block; font-size: var(--step--1); font-weight: 600; color: var(--red); margin-bottom: .5rem; }
+
+/* ---------- blends ---------- */
+.blends-sec { background: var(--peach); }
+.scale-note { display: flex; align-items: center; gap: .8rem; font-size: var(--step--1); color: var(--ink-soft); margin-top: .4rem; }
+.scale-note i { flex: 1; max-width: 10rem; height: 2px; background: linear-gradient(to left, var(--ink), transparent); }
+.blends { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
+.blend {
+  display: flex; flex-direction: column; min-width: 0;
+  background: var(--card); border-radius: 1.25rem; overflow: hidden;
+  transition: transform .25s ease;
+}
+.blend:hover { transform: translateY(-4px); }
+.ph {
+  position: relative; aspect-ratio: 1 / 1; max-width: 100%;
+  display: grid; place-items: center;
+  background:
+    radial-gradient(circle at 70% 30%, color-mix(in srgb, var(--red) 14%, transparent), transparent 60%),
+    var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.ph .num { font-family: var(--font-display); font-size: clamp(5rem, 9vw, 7.5rem); line-height: 1; color: var(--red); }
+.ph .ph-label {
+  position: absolute; bottom: .8rem; inset-inline-start: .8rem;
+  font-size: .75rem; font-weight: 600; color: var(--ink-soft);
+  background: var(--card); padding: .2rem .6rem; border-radius: 999px;
+}
+.ph.has-img { aspect-ratio: 1 / 1; overflow: hidden; background: #8B2E33; }
+.ph.has-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
+.blend:hover .ph.has-img img { transform: scale(1.05); }
+.ph-num { position: absolute; top: .9rem; inset-inline-start: 1.1rem; font-family: var(--font-display); font-size: 3rem; line-height: 1; color: #FBE9D9; }
+.ph-num.on-light { color: #B44343; }
+.blend-body { display: flex; flex-direction: column; gap: .7rem; padding: 1.25rem 1.25rem 1.4rem; flex: 1; }
+.blend-top { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; }
+.blend h3 { font-family: var(--font-display); font-size: var(--step-2); line-height: 1.2; }
+.blend .idx { font-family: var(--font-display); font-size: var(--step-1); color: var(--red); }
+.strength { display: flex; align-items: center; gap: .5rem; font-size: var(--step--1); font-weight: 600; }
+.dots { display: inline-flex; gap: 4px; direction: rtl; }
+.dots b { width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--ink); }
+.dots b.on { background: var(--ink); }
+.notes { display: flex; flex-wrap: wrap; gap: .35rem; padding: 0; margin: 0; list-style: none; }
+.notes li { font-size: .8rem; font-weight: 500; padding: .15rem .6rem; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-soft); }
+.blend p { font-size: .95rem; line-height: 1.7; color: var(--ink-soft); }
+.blend .when { font-size: var(--step--1); }
+.blend .when strong { color: var(--ink); font-weight: 600; }
+.blend .btn { margin-top: auto; align-self: flex-start; }
+
+/* ---------- brew ---------- */
+.brew .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 3rem; align-items: start; }
+.measures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+.measure { border-top: 2px solid var(--ink); padding-top: .8rem; }
+.measure .v { font-family: var(--font-display); font-size: var(--step-3); line-height: 1.1; }
+.measure .u { display: block; font-size: var(--step--1); color: var(--ink-soft); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; counter-reset: s; }
+.steps li {
+  counter-increment: s; display: grid; grid-template-columns: 4rem 1fr; gap: 1rem; align-items: center;
+  background: var(--card); border-radius: 1rem; padding: 1.1rem 1.25rem;
+}
+.steps li::before {
+  content: counter(s, arabic-indic); font-family: var(--font-display); font-size: 2.6rem; line-height: 1;
+  color: var(--red); text-align: center;
+}
+.steps h3 { font-size: var(--step-1); }
+.steps p { color: var(--ink-soft); font-size: .95rem; }
+.brew .more { margin-top: 1.5rem; display: inline-block; font-weight: 600; color: var(--red); }
+
+/* ---------- business ---------- */
+.biz { background: var(--red-band); color: var(--on-red); position: relative; overflow: hidden; }
+.biz .wrap { position: relative; display: grid; grid-template-columns: 1.2fr .8fr; gap: 3rem; align-items: center; }
+.biz h2 { font-family: var(--font-display); font-size: var(--step-3); line-height: 1.3; }
+.biz p { margin-top: 1rem; max-width: 36rem; opacity: .92; }
+.biz ul { list-style: none; padding: 0; margin: 1.6rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.biz li { border: 1px solid color-mix(in srgb, var(--on-red) 45%, transparent); border-radius: 999px; padding: .3rem .9rem; font-size: var(--step--1); }
+.biz .btn { background: var(--on-red); color: #8F3434; margin-top: 2rem; }
+.biz .btn:hover { transform: translateY(-2px); }
+.biz-steps { display: grid; gap: 0; border-inline-start: 1px solid color-mix(in srgb, var(--on-red) 35%, transparent); }
+.biz-steps div { padding: .9rem 1.4rem; }
+.biz-steps b { display: block; font-family: var(--font-display); font-size: var(--step-1); }
+.biz-steps span { font-size: var(--step--1); opacity: .85; }
+.biz-bg { position: absolute; inset-inline-end: -6rem; bottom: -8rem; width: 26rem; opacity: .14; pointer-events: none; }
+.biz-bg path { fill: var(--on-red); }
+
+/* ---------- instagram ---------- */
+.ig-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 2rem; }
+.ig-head h2 { font-family: var(--font-display); font-size: var(--step-3); line-height: 1.3; }
+.ig-head .handle { direction: ltr; font-weight: 600; color: var(--red); text-decoration: none; }
+.ig-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .75rem; }
+.ig {
+  position: relative; aspect-ratio: 3 / 4; max-width: 100%; border-radius: .9rem; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: space-between; padding: .9rem;
+  text-decoration: none; transition: transform .2s ease;
+}
+.ig:hover { transform: scale(1.02); }
+.ig:nth-child(3n+1) { background: var(--peach); color: var(--ink); }
+.ig:nth-child(3n+2) { background: var(--red-band); color: var(--on-red); }
+.ig:nth-child(3n) { background: var(--ink); color: var(--paper); }
+.ig.ig-img { padding: 0; background: var(--card); }
+.ig.ig-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.ig small { font-size: .7rem; font-weight: 600; opacity: .75; }
+.ig strong { font-family: var(--font-display); font-size: clamp(1.1rem, 1.6vw, 1.5rem); line-height: 1.3; }
+
+/* ---------- closing ---------- */
+.closing { background: var(--peach); text-align: center; }
+.closing h2 { font-family: var(--font-display); font-size: var(--step-4); line-height: 1.25; }
+.closing p { margin: 1rem auto 0; max-width: 32rem; color: var(--ink-soft); }
+.closing .actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem; margin-top: 2rem; }
+.phone { direction: ltr; unicode-bidi: isolate; font-weight: 600; font-variant-numeric: tabular-nums; user-select: all; }
+
+/* ---------- footer ---------- */
+.site-footer { background: var(--ink); color: var(--paper); }
+.site-footer .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem 2.5rem; padding-block: 2.5rem; }
+.site-footer .brand { color: var(--paper); }
+.site-footer .brand svg { width: 3.4rem; }
+.site-footer .brand .swirl { fill: #E07B7B; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 1.4rem; font-size: var(--step--1); }
+.site-footer nav a { text-decoration: none; opacity: .85; }
+.site-footer nav a:hover { opacity: 1; }
+.site-footer .meta { margin-inline-start: auto; font-size: var(--step--1); opacity: .7; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1000px) {
+  .blends { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ig-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 820px) {
+  .nav { display: none; }
+  .site-header .btn { margin-inline-start: auto; }
+  .hero .wrap, .name-story .wrap, .brew .wrap, .biz .wrap { grid-template-columns: 1fr; }
+  .hero-mark { width: min(60%, 14rem); justify-self: start; order: -1; }
+  .etym { justify-content: flex-start; }
+  .diffs { grid-template-columns: 1fr; }
+  .diff, .diff + .diff { border-inline-start: 0; padding-inline: 0; padding-block: 1.4rem; }
+  .diff + .diff { border-top: 1px solid var(--line); }
+  .biz-steps { border-inline-start: 0; border-top: 1px solid color-mix(in srgb, var(--on-red) 35%, transparent); }
+  .biz-steps div { padding-inline: 0; }
+  .site-footer .meta { margin-inline-start: 0; }
+}
+@media (max-width: 520px) {
+  .blends { grid-template-columns: 1fr; }
+  .ig-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .measures { gap: .6rem; }
+  .steps li { grid-template-columns: 3rem 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+</style>
+
+<script>document.documentElement.lang="ar";document.documentElement.dir="rtl";</script>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand logo" href="#top" aria-label="شاي وورق، الصفحة الرئيسية">{{LOGO}}</a>
+    <nav class="nav" aria-label="القائمة الرئيسية">
+      <a href="#story">قصتنا</a>
+      <a href="#blends">التوليفات</a>
+      <a href="#brew">طريقة التحضير</a>
+      <a href="#craft">للأعمال</a>
+      <a href="#journal">المنشورات</a>
+    </nav>
+    <a class="btn btn-red" href="{{WA:السلام عليكم، أود طلب شاي من شاي وورق}}" target="_blank" rel="noopener">{{WAICON}}اطلب</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">توليفات شاي بالزعفران</span>
+        <h1>رفيقك في كل مزاج،<br><em>وفي كل وقت</em></h1>
+        <p class="lede">أربع توليفات من الشاي الهندي والسيلاني والإنجليزي، نوازنها بخيوط الزعفران حتى تختفي البشوعة ويبقى طعم الشاي كما تحبه.</p>
+        <div class="actions">
+          <a class="btn btn-red" href="{{WA:السلام عليكم، أود طلب شاي من شاي وورق}}" target="_blank" rel="noopener">{{WAICON}}اطلب عبر واتساب</a>
+          <a class="btn btn-line" href="#blends">تعرّف على التوليفات</a>
+        </div>
+      </div>
+      <div class="hero-mark logo" aria-hidden="true">{{LOGO}}</div>
+    </div>
+  </section>
+
+
+  <section class="section story" id="story">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">قصتنا</span>
+        <h2>شاي البيت، من بيتنا إلى بيتك</h2>
+        <div class="body">
+          <p>شاي وورق مشروع عائلي بدأ من تجارب والدي في توليف الشاي الأسود. أعجبت توليفاته الأهل والأصدقاء، ومع أكثر من ثماني سنوات من الخبرة تحوّلت إلى مشروع يقدّم شاياً أصيلاً بنكهات متوازنة، فيه دفء البيت وعنايته.</p>
+          <p>نحن عائلة نشرب الشاي من دون سكّر ولا إضافة ماء، لذلك تمرّ كل توليفة نبيعها بتجربة تذوّق في البيت، ونعدّل عليها إن احتاجت. ولأمي الدور الكبير في الحكم على الطعم.</p>
+        </div>
+        <blockquote class="vision">رؤيتنا أن يصل الشاي الذي نحبّه في البيت إلى كل بيت، ويكون جزءاً من لحظات الراحة والبهجة اليومية.<cite>عائلة شاي وورق</cite></blockquote>
+      </div>
+      <div class="facts">
+        <div class="fact"><span class="v">+٨</span><div><b>سنوات في التوليف</b><span>خبرة بدأت في البيت.</span></div></div>
+        <div class="fact"><span class="v">٤</span><div><b>أنواع شاي في توليفاتنا</b><span>هندي وسيلاني وإنجليزي، يجمعها الزعفران.</span></div></div>
+        <div class="fact"><span class="v">٠</span><div><b>سكّر وماء مضاف</b><span>هكذا نشرب الشاي نحن، وهكذا نختبر كل توليفة.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section name-story">
+    <div class="wrap">
+      <div class="etym" aria-label="من تشا إلى تشاي إلى شاي">
+        <div><span>Cha</span><small>الصينية</small></div>
+        <span class="arrow">→</span>
+        <div><span>Chai</span><small>الهندية</small></div>
+        <span class="arrow">→</span>
+        <div class="ours"><span>Shay</span><small>نحن</small></div>
+      </div>
+      <div>
+        <h2 class="story-title">لماذا <span dir="ltr">Sh</span>؟</h2>
+        <p>كلمة «تشاي» هندية، أخذتها الهند من الكلمة الصينية «تشا». ونحن نقول «شاي»، ولهذا كتبنا اسمنا بالحرفين sh بدل ch.</p>
+        <p>والشاي اسم يُطلق على الشجرة وأوراقها والشراب الذي يُصنع منها. تُقطف أوراقه باليد وهي يانعة، وأفضلها الأوراق الرقيقة القريبة من القمة.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="diffs">
+        <div class="diff">
+          <span class="tag">الزعفران</span>
+          <h3>في قلب كل توليفة</h3>
+          <p>مقدار موزون من شعيرات الزعفران يضبط النكهة ويحفظ لون الشاي.</p>
+        </div>
+        <div class="diff">
+          <span class="tag">بلا بشوعة</span>
+          <h3>طعم ناعم من أول رشفة</h3>
+          <p>نوازن بين أنواع الأوراق حتى يخرج الشاي حلواً بلا مرارة، يُشرب بلا سكر أو بقليل منه.</p>
+        </div>
+        <div class="diff">
+          <span class="tag">لكل وقت</span>
+          <h3>من الضحى إلى العصاري</h3>
+          <p>توليفة خفيفة للصباح، وأخرى ثقيلة لمن يشرب الشاي في كل وقت، وما بينهما.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section blends-sec" id="blends">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" style="margin:0">التوليفات</span>
+        <h2>أربع توليفات، من الثقيلة إلى الخفيفة</h2>
+        <div class="scale-note">ثقيلة <i aria-hidden="true"></i> خفيفة</div>
+      </div>
+      <div class="blends">
+        {{BLENDS}}
+      </div>
+    </div>
+  </section>
+
+  <section class="section brew" id="brew">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">طريقة التحضير</span>
+        <h2 style="font-family:var(--font-display);font-size:var(--step-3);line-height:1.3">شاي الغوري، على مهل</h2>
+        <p style="margin-top:1rem;color:var(--ink-soft);max-width:30rem">الطريقة نفسها لكل التوليفات. السرّ في النار الهادئة والصبر.</p>
+        <div class="measures">
+          <div class="measure"><span class="v">٦</span><span class="u">غرام شاي، أو ملعقة طعام ممتلئة</span></div>
+          <div class="measure"><span class="v">٥٠٠</span><span class="u">مل ماء</span></div>
+          <div class="measure"><span class="v">٣٠</span><span class="u">دقيقة على نار هادئة</span></div>
+        </div>
+      </div>
+      <div>
+        <ol class="steps">
+          <li><div><h3>ضع الشاي في الغوري</h3><p>ملعقة طعام ممتلئة، أو ٦ غرام.</p></div></li>
+          <li><div><h3>صبّ الماء المغلي</h3><p>٥٠٠ مل من الماء المغلي فوق الشاي في الغوري.</p></div></li>
+          <li><div><h3>ضع الغوري على نار هادئة</h3><p>واتركه يتخدّر ٣٠ دقيقة.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section biz" id="craft">
+    <svg class="biz-bg" viewBox="136 86 72 60" aria-hidden="true">{{SWIRL}}</svg>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow" style="color:var(--on-red);opacity:.85">للأعمال</span>
+        <h2>توليفة خاصة باسم مشروعك</h2>
+        <p>نختار الأوراق ونزن الزعفران ونوازن النكهة حتى نصل إلى توليفة تناسب ضيوفك وهوية مكانك. تُضاف رسوم الصنعة، ونتفق على التفاصيل والسعر في واتساب.</p>
+        <ul aria-label="لمن هذه الخدمة">
+          <li>المقاهي</li><li>الفنادق</li><li>المكاتب والشركات</li><li>محلات الهدايا</li>
+        </ul>
+        <a class="btn" href="{{WA:السلام عليكم، أود الاستفسار عن صناعة توليفة شاي خاصة لمشروعي}}" target="_blank" rel="noopener">{{WAICON}}اطلب توليفة خاصة</a>
+      </div>
+      <div class="biz-steps" aria-label="كيف نعمل">
+        <div><b>نسمع منك</b><span>ذوق ضيوفك، ووقت تقديم الشاي، والنكهة التي تريدها.</span></div>
+        <div><b>نصنع ونجرّب</b><span>نوازن الأوراق والزعفران ونرسل لك عيّنة.</span></div>
+        <div><b>نجهّز طلبك</b><span>بالكمية التي تحتاجها، وبالنكهة نفسها في كل مرة.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="journal">
+    <div class="wrap">
+      <div class="ig-head">
+        <div>
+          <span class="eyebrow">من حسابنا</span>
+          <h2>آخر ما نشرنا</h2>
+        </div>
+        <a class="handle" href="https://www.instagram.com/shayowrq/" target="_blank" rel="noopener">@shayowrq</a>
+      </div>
+      <div class="ig-grid">
+        {{IG}}
+      </div>
+    </div>
+  </section>
+
+  <section class="section closing">
+    <div class="wrap">
+      <h2>اختر توليفتك</h2>
+      <p>نستقبل الطلبات عبر واتساب، ونرد عليك بالتوليفات المتوفرة وطريقة التوصيل.</p>
+      <div class="actions">
+        <a class="btn btn-red" href="{{WA:السلام عليكم، أود طلب شاي من شاي وورق}}" target="_blank" rel="noopener">{{WAICON}}اطلب عبر واتساب</a>
+        <span class="phone">+966 50 770 1166</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand logo" href="#top" aria-label="شاي وورق">{{LOGO}}</a>
+    <nav aria-label="روابط الموقع">
+      <a href="#story">قصتنا</a>
+      <a href="#blends">التوليفات</a>
+      <a href="#brew">طريقة التحضير</a>
+      <a href="#craft">للأعمال</a>
+      <a href="https://www.instagram.com/shayowrq/" target="_blank" rel="noopener">إنستغرام</a>
+      <a href="{{WA:السلام عليكم}}" target="_blank" rel="noopener">واتساب</a>
+    </nav>
+    <span class="meta">© ٢٠٢٦ شاي وورق</span>
+  </div>
+</footer>

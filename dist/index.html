@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>شاي وورق | توليفات شاي بالزعفران</title>
+<meta name="description" content="شاي وورق: مشروع عائلي لتوليفات الشاي بالزعفران. أربع توليفات لكل مزاج ولكل وقت، والطلب عبر واتساب.">
+<link rel="canonical" href="https://shayowrq.com/">
+<meta name="theme-color" content="#F0CAA9">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:site_name" content="شاي وورق">
+<meta property="og:title" content="شاي وورق | توليفات شاي بالزعفران">
+<meta property="og:description" content="شاي وورق: مشروع عائلي لتوليفات الشاي بالزعفران. أربع توليفات لكل مزاج ولكل وقت، والطلب عبر واتساب.">
+<meta property="og:url" content="https://shayowrq.com/">
+<meta property="og:image" content="https://shayowrq.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a tea-house catalog. Peach paper, black ink, one red mark (the و of the logo).
+   Blends are numbered ١–٤ from heaviest to lightest, so the number is information. */
+:root {
+  --peach: #F0CAA9;      /* brand peach */
+  --paper: #F8E7D7;      /* lighter peach for long reading */
+  --card: #FCF2E8;
+  --ink: #1B1412;
+  --ink-soft: #5E4B43;
+  --line: #E0C2A8;
+  --red: #B44343;        /* brand red */
+  --on-red: #FBE9D9;
+  --red-band: #B44343;
+  --font-display: "Doran", "Amiri", "Noto Naskh Arabic", serif;
+  --font-body: "GT America Arabic", "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  --step--1: .875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.3rem;
+  --step-2: clamp(1.6rem, 1.2rem + 1.6vw, 2.2rem);
+  --step-3: clamp(2.2rem, 1.4rem + 3.4vw, 3.6rem);
+  --step-4: clamp(3rem, 1.6rem + 6vw, 5.6rem);
+  --wrap: 72rem;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --peach: #2B1E1A; --paper: #171110; --card: #221815;
+    --ink: #F4DEC9; --ink-soft: #C2A795; --line: #3D2C26;
+    --red: #DB6767; --on-red: #FBE9D9; --red-band: #8F3434;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --peach: #2B1E1A; --paper: #171110; --card: #221815;
+  --ink: #F4DEC9; --ink-soft: #C2A795; --line: #3D2C26;
+  --red: #DB6767; --on-red: #FBE9D9; --red-band: #8F3434;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  direction: rtl;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--peach);
+}
+a { color: inherit; }
+img, svg { max-width: 100%; }
+h1, h2, h3 { margin: 0; text-wrap: balance; font-weight: 700; }
+p { margin: 0; }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 4px; }
+
+.wrap {
+  max-width: var(--wrap); margin-inline: auto;
+  padding-left: var(--gutter-l); padding-right: var(--gutter-r);
+}
+.logo .ink { fill: currentColor; }
+.logo .swirl { fill: var(--red); }
+
+/* ---------- header ---------- */
+.site-header {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: var(--peach);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .wrap {
+  display: flex; align-items: center; gap: 1.5rem;
+  padding-block: .6rem;
+}
+.brand { display: inline-flex; color: var(--ink); }
+.brand svg { width: 2.6rem; height: auto; display: block; }
+.nav { display: flex; gap: 1.6rem; margin-inline-start: auto; }
+.nav a { text-decoration: none; font-weight: 500; font-size: var(--step--1); }
+.nav a:hover { color: var(--red); }
+
+.btn {
+  display: inline-flex; align-items: center; gap: .55rem;
+  padding: .7rem 1.25rem; border-radius: 999px;
+  font: 600 var(--step--1)/1 var(--font-body);
+  text-decoration: none; white-space: nowrap;
+  transition: transform .2s ease, background-color .2s ease;
+}
+.btn svg { width: 1.1em; height: 1.1em; flex: none; }
+.btn-red { background: var(--red); color: var(--on-red); }
+.btn-red:hover { transform: translateY(-2px); }
+.btn-line { border: 1.5px solid currentColor; color: var(--ink); }
+.btn-line:hover { background: var(--ink); color: var(--paper); }
+.site-header .btn { padding: .55rem 1rem; }
+
+/* ---------- hero ---------- */
+.hero { background: var(--peach); overflow: hidden; }
+.hero .wrap {
+  display: grid; grid-template-columns: 1.15fr .85fr; align-items: center;
+  gap: 3rem; padding-block: clamp(3rem, 7vw, 6rem);
+}
+.eyebrow {
+  display: inline-block; font-size: var(--step--1); font-weight: 600;
+  color: var(--red); letter-spacing: .02em; margin-bottom: 1rem;
+}
+.hero h1 {
+  font-family: var(--font-display); font-size: var(--step-4);
+  line-height: 1.25;
+}
+.hero h1 em { font-style: normal; color: var(--red); }
+.hero p.lede { max-width: 34rem; margin-top: 1.4rem; font-size: var(--step-1); line-height: 1.8; color: var(--ink-soft); }
+.hero .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+.hero-mark { position: relative; justify-self: center; width: min(100%, 22rem); color: var(--ink); }
+.hero-mark svg { width: 100%; height: auto; display: block; }
+.hero-mark .swirl { transform-origin: 82% 56%; animation: steep 9s ease-in-out infinite; }
+@keyframes steep { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-7deg); } }
+
+/* ---------- section scaffolding ---------- */
+.section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+.section-head { display: grid; gap: .8rem; max-width: 40rem; margin-bottom: clamp(2rem, 4vw, 3rem); }
+.section-head h2 { font-family: var(--font-display); font-size: var(--step-3); line-height: 1.3; }
+.section-head p { color: var(--ink-soft); }
+
+
+/* ---------- our story ---------- */
+.story .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 3.5rem; align-items: start; }
+.story h2 { font-family: var(--font-display); font-size: var(--step-3); line-height: 1.3; }
+.story .body { display: grid; gap: 1rem; margin-top: 1.4rem; max-width: 38rem; }
+.story .body p:last-child { color: var(--ink-soft); }
+.vision {
+  margin: 2rem 0 0; padding-inline-start: 1.2rem; border-inline-start: 3px solid var(--red);
+  font-family: var(--font-display); font-size: var(--step-1); line-height: 1.7; max-width: 36rem;
+}
+.vision cite { display: block; margin-top: .4rem; font: 500 var(--step--1)/1.4 var(--font-body); font-style: normal; color: var(--ink-soft); }
+.facts { display: grid; gap: 0; border-top: 2px solid var(--ink); }
+.fact { display: grid; grid-template-columns: 5.5rem 1fr; gap: 1rem; align-items: center; padding-block: 1.1rem; border-bottom: 1px solid var(--line); }
+.fact .v { font-family: var(--font-display); font-size: 2.6rem; line-height: 1; color: var(--red); text-align: center; }
+.fact b { display: block; font-size: var(--step-0); }
+.fact span { font-size: var(--step--1); color: var(--ink-soft); }
+.name-story { border-top: 1px solid var(--line); }
+@media (max-width: 820px) { .story .wrap { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+/* ---------- name story ---------- */
+.name-story .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+.etym { display: flex; flex-wrap: wrap; align-items: baseline; gap: .6rem 1rem; direction: ltr; justify-content: flex-end; }
+.etym span { font-family: var(--font-display); font-size: var(--step-3); line-height: 1; }
+.etym small { display: block; font: 500 var(--step--1)/1.4 var(--font-body); color: var(--ink-soft); margin-top: .35rem; direction: rtl; text-align: center; }
+.etym .arrow { color: var(--line); font-size: var(--step-2); font-family: var(--font-body); }
+.etym .ours span { color: var(--red); }
+.story-title { font-family: var(--font-display); font-size: var(--step-3); line-height: 1.3; margin-bottom: 1rem; }
+.name-story p { max-width: 34rem; }
+.name-story p + p { margin-top: 1rem; color: var(--ink-soft); }
+
+/* ---------- difference ---------- */
+.diffs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--line); }
+.diff { padding: 1.8rem 0 0; padding-inline-end: 2rem; }
+.diff + .diff { border-inline-start: 1px solid var(--line); padding-inline-start: 2rem; }
+.diff h3 { font-size: var(--step-1); margin-bottom: .6rem; }
+.diff p { color: var(--ink-soft); }
+.diff .tag { display: inline-block; font-size: var(--step--1); font-weight: 600; color: var(--red); margin-bottom: .5rem; }
+
+/* ---------- blends ---------- */
+.blends-sec { background: var(--peach); }
+.scale-note { display: flex; align-items: center; gap: .8rem; font-size: var(--step--1); color: var(--ink-soft); margin-top: .4rem; }
+.scale-note i { flex: 1; max-width: 10rem; height: 2px; background: linear-gradient(to left, var(--ink), transparent); }
+.blends { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
+.blend {
+  display: flex; flex-direction: column; min-width: 0;
+  background: var(--card); border-radius: 1.25rem; overflow: hidden;
+  transition: transform .25s ease;
+}
+.blend:hover { transform: translateY(-4px); }
+.ph {
+  position: relative; aspect-ratio: 1 / 1; max-width: 100%;
+  display: grid; place-items: center;
+  background:
+    radial-gradient(circle at 70% 30%, color-mix(in srgb, var(--red) 14%, transparent), transparent 60%),
+    var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.ph .num { font-family: var(--font-display); font-size: clamp(5rem, 9vw, 7.5rem); line-height: 1; color: var(--red); }
+.ph .ph-label {
+  position: absolute; bottom: .8rem; inset-inline-start: .8rem;
+  font-size: .75rem; font-weight: 600; color: var(--ink-soft);
+  background: var(--card); padding: .2rem .6rem; border-radius: 999px;
+}
+.ph.has-img { aspect-ratio: 1 / 1; overflow: hidden; background: #8B2E33; }
+.ph.has-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
+.blend:hover .ph.has-img img { transform: scale(1.05); }
+.ph-num { position: absolute; top: .9rem; inset-inline-start: 1.1rem; font-family: var(--font-display); font-size: 3rem; line-height: 1; color: #FBE9D9; }
+.ph-num.on-light { color: #B44343; }
+.blend-body { display: flex; flex-direction: column; gap: .7rem; padding: 1.25rem 1.25rem 1.4rem; flex: 1; }
+.blend-top { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; }
+.blend h3 { font-family: var(--font-display); font-size: var(--step-2); line-height: 1.2; }
+.blend .idx { font-family: var(--font-display); font-size: var(--step-1); color: var(--red); }
+.strength { display: flex; align-items: center; gap: .5rem; font-size: var(--step--1); font-weight: 600; }
+.dots { display: inline-flex; gap: 4px; direction: rtl; }
+.dots b { width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--ink); }
+.dots b.on { background: var(--ink); }
+.notes { display: flex; flex-wrap: wrap; gap: .35rem; padding: 0; margin: 0; list-style: none; }
+.notes li { font-size: .8rem; font-weight: 500; padding: .15rem .6rem; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-soft); }
+.blend p { font-size: .95rem; line-height: 1.7; color: var(--ink-soft); }
+.blend .when { font-size: var(--step--1); }
+.blend .when strong { color: var(--ink); font-weight: 600; }
+.blend .btn { margin-top: auto; align-self: flex-start; }
+
+/* ---------- brew ---------- */
+.brew .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 3rem; align-items: start; }
+.measures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+.measure { border-top: 2px solid var(--ink); padding-top: .8rem; }
+.measure .v { font-family: var(--font-display); font-size: var(--step-3); line-height: 1.1; }
+.measure .u { display: block; font-size: var(--step--1); color: var(--ink-soft); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; counter-reset: s; }
+.steps li {
+  counter-increment: s; display: grid; grid-template-columns: 4rem 1fr; gap: 1rem; align-items: center;
+  background: var(--card); border-radius: 1rem; padding: 1.1rem 1.25rem;
+}
+.steps li::before {
+  content: counter(s, arabic-indic); font-family: var(--font-display); font-size: 2.6rem; line-height: 1;
+  color: var(--red); text-align: center;
+}
+.steps h3 { font-size: var(--step-1); }
+.steps p { color: var(--ink-soft); font-size: .95rem; }
+.brew .more { margin-top: 1.5rem; display: inline-block; font-weight: 600; color: var(--red); }
+
+/* ---------- business ---------- */
+.biz { background: var(--red-band); color: var(--on-red); position: relative; overflow: hidden; }
+.biz .wrap { position: relative; display: grid; grid-template-columns: 1.2fr .8fr; gap: 3rem; align-items: center; }
+.biz h2 { font-family: var(--font-display); font-size: var(--step-3); line-height: 1.3; }
+.biz p { margin-top: 1rem; max-width: 36rem; opacity: .92; }
+.biz ul { list-style: none; padding: 0; margin: 1.6rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.biz li { border: 1px solid color-mix(in srgb, var(--on-red) 45%, transparent); border-radius: 999px; padding: .3rem .9rem; font-size: var(--step--1); }
+.biz .btn { background: var(--on-red); color: #8F3434; margin-top: 2rem; }
+.biz .btn:hover { transform: translateY(-2px); }
+.biz-steps { display: grid; gap: 0; border-inline-start: 1px solid color-mix(in srgb, var(--on-red) 35%, transparent); }
+.biz-steps div { padding: .9rem 1.4rem; }
+.biz-steps b { display: block; font-family: var(--font-display); font-size: var(--step-1); }
+.biz-steps span { font-size: var(--step--1); opacity: .85; }
+.biz-bg { position: absolute; inset-inline-end: -6rem; bottom: -8rem; width: 26rem; opacity: .14; pointer-events: none; }
+.biz-bg path { fill: var(--on-red); }
+
+/* ---------- instagram ---------- */
+.ig-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 2rem; }
+.ig-head h2 { font-family: var(--font-display); font-size: var(--step-3); line-height: 1.3; }
+.ig-head .handle { direction: ltr; font-weight: 600; color: var(--red); text-decoration: none; }
+.ig-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .75rem; }
+.ig {
+  position: relative; aspect-ratio: 3 / 4; max-width: 100%; border-radius: .9rem; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: space-between; padding: .9rem;
+  text-decoration: none; transition: transform .2s ease;
+}
+.ig:hover { transform: scale(1.02); }
+.ig:nth-child(3n+1) { background: var(--peach); color: var(--ink); }
+.ig:nth-child(3n+2) { background: var(--red-band); color: var(--on-red); }
+.ig:nth-child(3n) { background: var(--ink); color: var(--paper); }
+.ig.ig-img { padding: 0; background: var(--card); }
+.ig.ig-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.ig small { font-size: .7rem; font-weight: 600; opacity: .75; }
+.ig strong { font-family: var(--font-display); font-size: clamp(1.1rem, 1.6vw, 1.5rem); line-height: 1.3; }
+
+/* ---------- closing ---------- */
+.closing { background: var(--peach); text-align: center; }
+.closing h2 { font-family: var(--font-display); font-size: var(--step-4); line-height: 1.25; }
+.closing p { margin: 1rem auto 0; max-width: 32rem; color: var(--ink-soft); }
+.closing .actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem; margin-top: 2rem; }
+.phone { direction: ltr; unicode-bidi: isolate; font-weight: 600; font-variant-numeric: tabular-nums; user-select: all; }
+
+/* ---------- footer ---------- */
+.site-footer { background: var(--ink); color: var(--paper); }
+.site-footer .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem 2.5rem; padding-block: 2.5rem; }
+.site-footer .brand { color: var(--paper); }
+.site-footer .brand svg { width: 3.4rem; }
+.site-footer .brand .swirl { fill: #E07B7B; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 1.4rem; font-size: var(--step--1); }
+.site-footer nav a { text-decoration: none; opacity: .85; }
+.site-footer nav a:hover { opacity: 1; }
+.site-footer .meta { margin-inline-start: auto; font-size: var(--step--1); opacity: .7; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1000px) {
+  .blends { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ig-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 820px) {
+  .nav { display: none; }
+  .site-header .btn { margin-inline-start: auto; }
+  .hero .wrap, .name-story .wrap, .brew .wrap, .biz .wrap { grid-template-columns: 1fr; }
+  .hero-mark { width: min(60%, 14rem); justify-self: start; order: -1; }
+  .etym { justify-content: flex-start; }
+  .diffs { grid-template-columns: 1fr; }
+  .diff, .diff + .diff { border-inline-start: 0; padding-inline: 0; padding-block: 1.4rem; }
+  .diff + .diff { border-top: 1px solid var(--line); }
+  .biz-steps { border-inline-start: 0; border-top: 1px solid color-mix(in srgb, var(--on-red) 35%, transparent); }
+  .biz-steps div { padding-inline: 0; }
+  .site-footer .meta { margin-inline-start: 0; }
+}
+@media (max-width: 520px) {
+  .blends { grid-template-columns: 1fr; }
+  .ig-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .measures { gap: .6rem; }
+  .steps li { grid-template-columns: 3rem 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand logo" href="#top" aria-label="شاي وورق، الصفحة الرئيسية"><svg viewBox="0 0 206 211" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<path class="ink" d="M63.3282 25.5238C66.6595 25.5238 69.2886 26.5363 71.2156 28.5612C73.1425 30.5534 74.106 33.1989 74.106 36.4976C74.106 38.7184 73.6814 41.0046 72.8322 43.3562H72.2443C72.2443 41.8865 71.2319 40.727 69.207 39.8779C67.182 39.0287 64.6346 38.6041 61.5645 38.6041C57.8413 38.6041 54.3793 39.388 51.1786 40.9556C48.0106 42.4907 45.4795 44.3686 43.5852 46.5895C41.7236 48.7777 40.7928 50.7373 40.7928 52.4683C40.7928 54.2319 42.0338 55.5383 44.516 56.3875C46.9982 57.204 50.2968 57.6122 54.412 57.6122H60.7317C64.3896 57.6122 67.2637 58.0368 69.3539 58.886C71.4442 59.7351 72.9465 61.1069 73.861 63.0011C74.7755 64.8628 75.2327 67.4102 75.2327 70.6436C75.2327 77.7961 73.861 84.0015 71.1176 89.2598C68.3741 94.5181 64.3243 98.5679 58.9681 101.409C53.6445 104.251 47.1778 105.671 39.568 105.671C31.2397 105.671 24.9037 103.418 20.5599 98.9108C16.2161 94.4364 14.0442 87.9861 14.0442 79.5598C14.0442 70.7089 16.0201 62.005 19.972 53.4481H21.1968C19.2045 58.8697 18.2084 64.2096 18.2084 69.4678C18.2084 75.1833 20.217 79.5924 24.2341 82.6951C28.2513 85.7652 33.9668 87.3002 41.3806 87.3002C48.9251 87.3002 55.0652 86.6633 59.8009 85.3896C64.5366 84.1485 67.9332 82.6298 69.9908 80.8335C72.0484 79.0045 73.0772 77.1919 73.0772 75.3956C73.0772 74.7751 72.1464 74.3342 70.2847 74.0729C68.4231 73.7789 64.9285 73.632 59.8009 73.632H53.2362C49.5456 73.632 46.5736 73.2564 44.32 72.5052C42.0992 71.7214 40.4498 70.4313 39.372 68.635C38.3269 66.806 37.8044 64.3075 37.8044 61.1395C37.8044 55.9792 39.0128 50.6067 41.4296 45.0218C43.8465 39.437 47.0145 34.7992 50.9337 31.1087C54.8855 27.3854 59.017 25.5238 63.3282 25.5238ZM25.9488 127.864C26.5367 126.819 27.2878 125.006 28.2023 122.426C29.1168 119.879 29.7373 117.935 30.0639 116.596C33.8852 116.335 37.6901 116.123 41.4786 115.959C45.2672 115.829 48.2066 115.763 50.2968 115.763C53.1056 115.763 55.1795 116.106 56.5185 116.792C57.8903 117.511 58.5761 118.752 58.5761 120.515C58.5761 121.103 58.4781 121.74 58.2822 122.426C58.1189 123.145 57.8576 124.043 57.4983 125.12C56.8778 127.047 56.4532 128.68 56.2246 130.019H55.6367C55.6367 128.876 55.0325 128.093 53.8241 127.668C52.6483 127.243 50.6724 127.031 47.8963 127.031C45.9367 127.031 42.5564 127.096 37.7554 127.227C32.9544 127.39 29.0188 127.603 25.9488 127.864Z"/>
+<path class="ink" d="M99.2126 84.3118C94.7382 84.3118 91.1782 83.6096 88.5328 82.2052C85.8873 80.8008 83.895 78.433 82.556 75.1017C81.2496 71.7704 80.4657 67.1163 80.2045 61.1395C79.8125 51.3415 79.4043 43.7154 78.9797 38.2612C78.5878 32.807 78.1305 28.5612 77.608 25.5238C77.0854 22.4864 76.3669 19.1224 75.4524 15.4319C77.412 13.4723 79.4696 11.0717 81.6252 8.23032C83.7807 5.35624 85.6913 2.6128 87.357 0H87.9449C87.9449 1.20842 88.0102 3.47829 88.1408 6.80961C88.4021 11.4473 88.5328 16.1014 88.5328 20.7718C88.5328 23.6785 88.4348 28.6592 88.2388 35.7137C88.0428 43.4215 87.9449 49.3329 87.9449 53.4481C87.9449 57.6612 89.0716 60.7966 91.3252 62.8542C93.6114 64.8791 97.2366 65.8916 102.201 65.8916L99.2126 84.3118Z"/>
+<path class="ink" d="M161.647 38.9471C162.627 41.1353 163.46 43.2092 164.146 45.1688C164.864 47.1284 165.501 49.5452 166.056 52.4193C166.612 55.2607 166.889 58.3634 166.889 61.7274C166.889 68.9453 165.681 74.5138 163.264 78.433C160.88 82.3522 157.336 84.3118 152.633 84.3118C144.991 84.3118 141.169 80.2783 141.169 72.2113C141.169 71.0355 141.235 69.9251 141.365 68.8799H140.778C140.222 74.0076 138.638 77.8615 136.025 80.4416C133.445 83.0217 130.277 84.3118 126.521 84.3118C123.419 84.3118 120.986 83.4137 119.222 81.6173C117.491 79.821 116.625 77.0939 116.625 73.436C116.625 71.8683 116.756 70.3496 117.017 68.8799H116.429C115.548 74.1382 113.653 78.0247 110.747 80.5396C107.873 83.0544 104.019 84.3118 99.185 84.3118C98.2705 84.3118 97.552 83.8382 97.0294 82.8911C96.5069 81.9113 96.2456 80.4089 96.2456 78.384C96.2456 74.3015 96.7845 71.1988 97.8623 69.0759C98.9074 66.953 100.344 65.8916 102.173 65.8916C105.701 65.8916 108.558 65.5486 110.747 64.8628C112.968 64.1769 114.764 62.9358 116.136 61.1395C117.54 59.3432 118.634 56.7794 119.418 53.4481H120.594C120.398 55.1138 119.924 58.5431 119.173 63.736C121.361 65.173 124.594 65.8916 128.873 65.8916C131.91 65.8916 134.343 65.516 136.172 64.7648C138.034 63.9809 139.504 62.7072 140.582 60.9436C141.692 59.1473 142.541 56.6488 143.129 53.4481H144.354L143.031 63.3441C144.011 64.1279 145.448 64.7485 147.342 65.2057C149.236 65.6629 151.408 65.8916 153.858 65.8916C155.719 65.8916 157.499 65.7446 159.198 65.4506C160.896 65.124 162.268 64.7321 163.313 64.2749C164.358 63.785 164.881 63.3441 164.881 62.9522C164.881 62.299 164.048 61.1885 162.382 59.6208C160.749 58.0532 157.695 55.5873 153.221 52.2233C154.462 50.3617 155.752 48.0755 157.091 45.3647C158.43 42.654 159.524 39.9922 160.374 37.3794H160.961L161.647 38.9471ZM138.965 26.6996C137.887 25.6218 136.466 24.4134 134.703 23.0743C132.939 21.7352 131.388 20.7718 130.049 20.1839V19.596L136.613 11.2677C138.312 12.0842 140.026 13.2273 141.757 14.697C143.521 16.134 144.778 17.3588 145.53 18.3713L138.965 26.6996ZM154.397 29.443C153.776 30.5208 153.009 32.2681 152.094 34.6849C151.18 37.0691 150.576 38.8817 150.282 40.1228C146.46 40.3841 142.655 40.5964 138.867 40.7597C135.078 40.8903 132.139 40.9556 130.049 40.9556C127.24 40.9556 125.15 40.6127 123.778 39.9269C122.439 39.2083 121.769 37.9673 121.769 36.2036C121.769 35.6484 121.851 35.0605 122.014 34.44C122.178 33.8194 122.439 33.0193 122.798 32.0395C123.484 30.0472 123.925 28.4632 124.121 27.2874H124.709C124.709 28.4305 125.297 29.2144 126.472 29.639C127.681 30.0635 129.673 30.2758 132.449 30.2758C134.409 30.2758 137.789 30.2105 142.59 30.0799C147.391 29.9166 151.327 29.7043 154.397 29.443Z"/>
+<path class="ink" d="M42.1804 135.312C45.9363 135.312 49.137 136.602 51.7824 139.182C54.4606 141.762 56.4855 145.534 57.8572 150.499C59.2616 155.463 59.9638 161.489 59.9638 168.576C59.9638 177.296 58.5594 184.579 55.7506 190.426C52.9419 196.272 48.9573 200.615 43.7971 203.457C38.6694 206.331 32.5784 207.768 25.5238 207.768C17.2608 207.768 10.9411 205.498 6.56466 200.958C2.18822 196.451 0 190.017 0 181.656C0 172.773 1.97593 164.053 5.92779 155.496H7.15254C5.16028 160.95 4.16415 166.29 4.16415 171.515C4.16415 175.271 5.0623 178.488 6.8586 181.166C8.6549 183.812 11.284 185.837 14.746 187.241C18.208 188.646 22.4048 189.348 27.3364 189.348C33.1826 189.348 38.4572 188.531 43.1602 186.898C47.8632 185.265 51.5375 183.208 54.1829 180.726C56.8611 178.211 58.2001 175.745 58.2001 173.328C58.2001 169.474 57.7429 165.914 56.8284 162.648H56.7794C56.6161 167.482 55.0648 171.27 52.1254 174.014C49.186 176.725 45.0708 178.08 39.7799 178.08C29.8839 178.08 24.9359 172.528 24.9359 161.423C24.9359 156.786 25.6381 152.475 27.0425 148.49C28.4469 144.506 30.4555 141.321 33.0683 138.937C35.7137 136.52 38.7511 135.312 42.1804 135.312ZM40.3678 160.836C43.2092 160.836 45.7077 160.656 47.8632 160.297C50.0515 159.905 52.4683 159.203 55.1138 158.19C53.5461 155.022 51.4558 152.605 48.843 150.94C46.2302 149.241 43.2092 148.392 39.7799 148.392C37.559 148.392 35.5014 148.8 33.6071 149.617C31.7129 150.433 30.1942 151.413 29.0511 152.556C27.908 153.699 27.3364 154.679 27.3364 155.496C27.3364 156.378 27.7447 157.227 28.5612 158.043C29.3777 158.86 30.7494 159.529 32.6763 160.052C34.6359 160.574 37.1997 160.836 40.3678 160.836Z"/>
+<path class="ink" d="M70.6459 210.707C68.1637 210.707 65.8285 210.299 63.6403 209.483C61.4521 208.699 58.9046 207.572 55.9979 206.102C53.4504 204.829 51.6051 203.996 50.462 203.604V203.016C56.3408 201.677 62.4972 199.407 68.9312 196.206C75.3979 193.006 80.8031 189.674 85.1469 186.212C89.5234 182.75 91.7116 180.04 91.7116 178.08C91.7116 176.904 90.5032 175.141 88.0863 172.789C85.6695 170.438 82.0279 167.449 77.1616 163.824C78.4353 161.93 79.8233 159.431 81.3257 156.329C82.8607 153.226 84.0528 150.384 84.902 147.804H85.4899C85.6858 148.294 86.1104 149.192 86.7636 150.499C87.972 152.916 89.0008 155.169 89.85 157.259C90.7318 159.35 91.5156 161.799 92.2015 164.608C92.8873 167.417 93.2303 170.323 93.2303 173.328C93.2303 181.199 92.2341 187.943 90.2419 193.561C88.2496 199.211 85.5388 203.473 82.1095 206.347C78.7129 209.254 74.8917 210.707 70.6459 210.707Z"/>
+<path class="ink" d="M121.933 141.24C125.656 141.24 128.857 142.497 131.535 145.012C134.213 147.494 136.254 151.07 137.659 155.741C139.063 160.378 139.765 165.849 139.765 172.152C139.765 180.513 138.671 187.584 136.483 193.365C134.295 199.178 131.355 203.522 127.665 206.396C123.974 209.27 119.892 210.707 115.417 210.707C112.739 210.707 110.159 210.299 107.677 209.483C105.227 208.699 102.353 207.572 99.0547 206.102C98.7934 206.004 97.9606 205.645 96.5562 205.025C95.1845 204.437 93.9434 203.963 92.833 203.604V203.016C98.8098 201.971 105.358 200.028 112.478 197.186C119.598 194.345 125.624 191.095 130.555 187.437C135.487 183.812 137.953 180.334 137.953 177.002C137.953 174.03 137.594 171.189 136.875 168.478L136.532 168.576C136.369 173.41 134.817 177.198 131.878 179.942C128.939 182.652 124.84 184.008 119.582 184.008C109.686 184.008 104.738 178.472 104.738 167.4C104.738 162.73 105.44 158.402 106.844 154.418C108.249 150.433 110.257 147.249 112.87 144.865C115.483 142.448 118.504 141.24 121.933 141.24ZM120.169 166.763C123.011 166.763 125.526 166.584 127.714 166.224C129.935 165.833 132.417 165.114 135.16 164.069C133.593 160.966 131.47 158.566 128.792 156.867C126.114 155.169 123.043 154.32 119.582 154.32C117.361 154.32 115.287 154.728 113.36 155.545C111.466 156.361 109.947 157.341 108.804 158.484C107.661 159.627 107.089 160.607 107.089 161.423C107.089 162.305 107.497 163.154 108.314 163.971C109.163 164.787 110.551 165.457 112.478 165.98C114.438 166.502 117.001 166.763 120.169 166.763Z"/>
+<path class="swirl" d="M142.729 141.014C139.951 138.535 138.401 135.465 138.078 131.805C137.734 128.17 138.593 124.143 140.656 119.724C142.697 115.329 145.816 110.781 150.014 106.079C155.583 99.8417 161.108 95.2959 166.591 92.441C172.095 89.5618 177.18 88.2792 181.847 88.5932C186.515 88.9072 190.517 90.5542 193.855 93.5342C195.852 95.3178 197.505 97.3408 198.813 99.603C200.118 101.819 201.512 104.574 202.993 107.867C203.123 108.114 203.505 108.937 204.139 110.335C204.771 111.687 205.381 112.867 205.97 113.874L205.579 114.313C200.425 111.112 194.246 108.2 187.042 105.578C179.839 102.956 173.179 101.367 167.064 100.811C160.971 100.231 156.815 101.183 154.597 103.668C152.617 105.885 150.993 108.244 149.723 110.744L150.045 110.9C153.386 107.403 157.066 105.61 161.086 105.521C165.084 105.457 169.044 107.175 172.966 110.677C180.348 117.268 180.352 124.693 172.979 132.952C169.868 136.436 166.462 139.196 162.761 141.233C159.06 143.27 155.441 144.308 151.904 144.346C148.345 144.409 145.287 143.298 142.729 141.014ZM161.043 123.149C158.923 121.257 156.928 119.716 155.056 118.527C153.139 117.34 150.809 116.223 148.066 115.175C147.169 118.534 147.154 121.738 148.021 124.789C148.887 127.839 150.612 130.517 153.194 132.823C154.851 134.302 156.67 135.379 158.651 136.053C160.608 136.706 162.393 136.986 164.007 136.895C165.621 136.804 166.7 136.453 167.244 135.844C167.831 135.186 168.092 134.281 168.027 133.128C167.937 131.954 167.348 130.53 166.258 128.857C165.145 127.162 163.406 125.259 161.043 123.149Z"/>
+</svg></a>
+    <nav class="nav" aria-label="القائمة الرئيسية">
+      <a href="#story">قصتنا</a>
+      <a href="#blends">التوليفات</a>
+      <a href="#brew">طريقة التحضير</a>
+      <a href="#craft">للأعمال</a>
+      <a href="#journal">المنشورات</a>
+    </nav>
+    <a class="btn btn-red" href="https://wa.me/966507701166?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%B4%D8%A7%D9%8A%20%D9%85%D9%86%20%D8%B4%D8%A7%D9%8A%20%D9%88%D9%88%D8%B1%D9%82" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></svg>اطلب</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">توليفات شاي بالزعفران</span>
+        <h1>رفيقك في كل مزاج،<br><em>وفي كل وقت</em></h1>
+        <p class="lede">أربع توليفات من الشاي الهندي والسيلاني والإنجليزي، نوازنها بخيوط الزعفران حتى تختفي البشوعة ويبقى طعم الشاي كما تحبه.</p>
+        <div class="actions">
+          <a class="btn btn-red" href="https://wa.me/966507701166?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%B4%D8%A7%D9%8A%20%D9%85%D9%86%20%D8%B4%D8%A7%D9%8A%20%D9%88%D9%88%D8%B1%D9%82" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></svg>اطلب عبر واتساب</a>
+          <a class="btn btn-line" href="#blends">تعرّف على التوليفات</a>
+        </div>
+      </div>
+      <div class="hero-mark logo" aria-hidden="true"><svg viewBox="0 0 206 211" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<path class="ink" d="M63.3282 25.5238C66.6595 25.5238 69.2886 26.5363 71.2156 28.5612C73.1425 30.5534 74.106 33.1989 74.106 36.4976C74.106 38.7184 73.6814 41.0046 72.8322 43.3562H72.2443C72.2443 41.8865 71.2319 40.727 69.207 39.8779C67.182 39.0287 64.6346 38.6041 61.5645 38.6041C57.8413 38.6041 54.3793 39.388 51.1786 40.9556C48.0106 42.4907 45.4795 44.3686 43.5852 46.5895C41.7236 48.7777 40.7928 50.7373 40.7928 52.4683C40.7928 54.2319 42.0338 55.5383 44.516 56.3875C46.9982 57.204 50.2968 57.6122 54.412 57.6122H60.7317C64.3896 57.6122 67.2637 58.0368 69.3539 58.886C71.4442 59.7351 72.9465 61.1069 73.861 63.0011C74.7755 64.8628 75.2327 67.4102 75.2327 70.6436C75.2327 77.7961 73.861 84.0015 71.1176 89.2598C68.3741 94.5181 64.3243 98.5679 58.9681 101.409C53.6445 104.251 47.1778 105.671 39.568 105.671C31.2397 105.671 24.9037 103.418 20.5599 98.9108C16.2161 94.4364 14.0442 87.9861 14.0442 79.5598C14.0442 70.7089 16.0201 62.005 19.972 53.4481H21.1968C19.2045 58.8697 18.2084 64.2096 18.2084 69.4678C18.2084 75.1833 20.217 79.5924 24.2341 82.6951C28.2513 85.7652 33.9668 87.3002 41.3806 87.3002C48.9251 87.3002 55.0652 86.6633 59.8009 85.3896C64.5366 84.1485 67.9332 82.6298 69.9908 80.8335C72.0484 79.0045 73.0772 77.1919 73.0772 75.3956C73.0772 74.7751 72.1464 74.3342 70.2847 74.0729C68.4231 73.7789 64.9285 73.632 59.8009 73.632H53.2362C49.5456 73.632 46.5736 73.2564 44.32 72.5052C42.0992 71.7214 40.4498 70.4313 39.372 68.635C38.3269 66.806 37.8044 64.3075 37.8044 61.1395C37.8044 55.9792 39.0128 50.6067 41.4296 45.0218C43.8465 39.437 47.0145 34.7992 50.9337 31.1087C54.8855 27.3854 59.017 25.5238 63.3282 25.5238ZM25.9488 127.864C26.5367 126.819 27.2878 125.006 28.2023 122.426C29.1168 119.879 29.7373 117.935 30.0639 116.596C33.8852 116.335 37.6901 116.123 41.4786 115.959C45.2672 115.829 48.2066 115.763 50.2968 115.763C53.1056 115.763 55.1795 116.106 56.5185 116.792C57.8903 117.511 58.5761 118.752 58.5761 120.515C58.5761 121.103 58.4781 121.74 58.2822 122.426C58.1189 123.145 57.8576 124.043 57.4983 125.12C56.8778 127.047 56.4532 128.68 56.2246 130.019H55.6367C55.6367 128.876 55.0325 128.093 53.8241 127.668C52.6483 127.243 50.6724 127.031 47.8963 127.031C45.9367 127.031 42.5564 127.096 37.7554 127.227C32.9544 127.39 29.0188 127.603 25.9488 127.864Z"/>
+<path class="ink" d="M99.2126 84.3118C94.7382 84.3118 91.1782 83.6096 88.5328 82.2052C85.8873 80.8008 83.895 78.433 82.556 75.1017C81.2496 71.7704 80.4657 67.1163 80.2045 61.1395C79.8125 51.3415 79.4043 43.7154 78.9797 38.2612C78.5878 32.807 78.1305 28.5612 77.608 25.5238C77.0854 22.4864 76.3669 19.1224 75.4524 15.4319C77.412 13.4723 79.4696 11.0717 81.6252 8.23032C83.7807 5.35624 85.6913 2.6128 87.357 0H87.9449C87.9449 1.20842 88.0102 3.47829 88.1408 6.80961C88.4021 11.4473 88.5328 16.1014 88.5328 20.7718C88.5328 23.6785 88.4348 28.6592 88.2388 35.7137C88.0428 43.4215 87.9449 49.3329 87.9449 53.4481C87.9449 57.6612 89.0716 60.7966 91.3252 62.8542C93.6114 64.8791 97.2366 65.8916 102.201 65.8916L99.2126 84.3118Z"/>
+<path class="ink" d="M161.647 38.9471C162.627 41.1353 163.46 43.2092 164.146 45.1688C164.864 47.1284 165.501 49.5452 166.056 52.4193C166.612 55.2607 166.889 58.3634 166.889 61.7274C166.889 68.9453 165.681 74.5138 163.264 78.433C160.88 82.3522 157.336 84.3118 152.633 84.3118C144.991 84.3118 141.169 80.2783 141.169 72.2113C141.169 71.0355 141.235 69.9251 141.365 68.8799H140.778C140.222 74.0076 138.638 77.8615 136.025 80.4416C133.445 83.0217 130.277 84.3118 126.521 84.3118C123.419 84.3118 120.986 83.4137 119.222 81.6173C117.491 79.821 116.625 77.0939 116.625 73.436C116.625 71.8683 116.756 70.3496 117.017 68.8799H116.429C115.548 74.1382 113.653 78.0247 110.747 80.5396C107.873 83.0544 104.019 84.3118 99.185 84.3118C98.2705 84.3118 97.552 83.8382 97.0294 82.8911C96.5069 81.9113 96.2456 80.4089 96.2456 78.384C96.2456 74.3015 96.7845 71.1988 97.8623 69.0759C98.9074 66.953 100.344 65.8916 102.173 65.8916C105.701 65.8916 108.558 65.5486 110.747 64.8628C112.968 64.1769 114.764 62.9358 116.136 61.1395C117.54 59.3432 118.634 56.7794 119.418 53.4481H120.594C120.398 55.1138 119.924 58.5431 119.173 63.736C121.361 65.173 124.594 65.8916 128.873 65.8916C131.91 65.8916 134.343 65.516 136.172 64.7648C138.034 63.9809 139.504 62.7072 140.582 60.9436C141.692 59.1473 142.541 56.6488 143.129 53.4481H144.354L143.031 63.3441C144.011 64.1279 145.448 64.7485 147.342 65.2057C149.236 65.6629 151.408 65.8916 153.858 65.8916C155.719 65.8916 157.499 65.7446 159.198 65.4506C160.896 65.124 162.268 64.7321 163.313 64.2749C164.358 63.785 164.881 63.3441 164.881 62.9522C164.881 62.299 164.048 61.1885 162.382 59.6208C160.749 58.0532 157.695 55.5873 153.221 52.2233C154.462 50.3617 155.752 48.0755 157.091 45.3647C158.43 42.654 159.524 39.9922 160.374 37.3794H160.961L161.647 38.9471ZM138.965 26.6996C137.887 25.6218 136.466 24.4134 134.703 23.0743C132.939 21.7352 131.388 20.7718 130.049 20.1839V19.596L136.613 11.2677C138.312 12.0842 140.026 13.2273 141.757 14.697C143.521 16.134 144.778 17.3588 145.53 18.3713L138.965 26.6996ZM154.397 29.443C153.776 30.5208 153.009 32.2681 152.094 34.6849C151.18 37.0691 150.576 38.8817 150.282 40.1228C146.46 40.3841 142.655 40.5964 138.867 40.7597C135.078 40.8903 132.139 40.9556 130.049 40.9556C127.24 40.9556 125.15 40.6127 123.778 39.9269C122.439 39.2083 121.769 37.9673 121.769 36.2036C121.769 35.6484 121.851 35.0605 122.014 34.44C122.178 33.8194 122.439 33.0193 122.798 32.0395C123.484 30.0472 123.925 28.4632 124.121 27.2874H124.709C124.709 28.4305 125.297 29.2144 126.472 29.639C127.681 30.0635 129.673 30.2758 132.449 30.2758C134.409 30.2758 137.789 30.2105 142.59 30.0799C147.391 29.9166 151.327 29.7043 154.397 29.443Z"/>
+<path class="ink" d="M42.1804 135.312C45.9363 135.312 49.137 136.602 51.7824 139.182C54.4606 141.762 56.4855 145.534 57.8572 150.499C59.2616 155.463 59.9638 161.489 59.9638 168.576C59.9638 177.296 58.5594 184.579 55.7506 190.426C52.9419 196.272 48.9573 200.615 43.7971 203.457C38.6694 206.331 32.5784 207.768 25.5238 207.768C17.2608 207.768 10.9411 205.498 6.56466 200.958C2.18822 196.451 0 190.017 0 181.656C0 172.773 1.97593 164.053 5.92779 155.496H7.15254C5.16028 160.95 4.16415 166.29 4.16415 171.515C4.16415 175.271 5.0623 178.488 6.8586 181.166C8.6549 183.812 11.284 185.837 14.746 187.241C18.208 188.646 22.4048 189.348 27.3364 189.348C33.1826 189.348 38.4572 188.531 43.1602 186.898C47.8632 185.265 51.5375 183.208 54.1829 180.726C56.8611 178.211 58.2001 175.745 58.2001 173.328C58.2001 169.474 57.7429 165.914 56.8284 162.648H56.7794C56.6161 167.482 55.0648 171.27 52.1254 174.014C49.186 176.725 45.0708 178.08 39.7799 178.08C29.8839 178.08 24.9359 172.528 24.9359 161.423C24.9359 156.786 25.6381 152.475 27.0425 148.49C28.4469 144.506 30.4555 141.321 33.0683 138.937C35.7137 136.52 38.7511 135.312 42.1804 135.312ZM40.3678 160.836C43.2092 160.836 45.7077 160.656 47.8632 160.297C50.0515 159.905 52.4683 159.203 55.1138 158.19C53.5461 155.022 51.4558 152.605 48.843 150.94C46.2302 149.241 43.2092 148.392 39.7799 148.392C37.559 148.392 35.5014 148.8 33.6071 149.617C31.7129 150.433 30.1942 151.413 29.0511 152.556C27.908 153.699 27.3364 154.679 27.3364 155.496C27.3364 156.378 27.7447 157.227 28.5612 158.043C29.3777 158.86 30.7494 159.529 32.6763 160.052C34.6359 160.574 37.1997 160.836 40.3678 160.836Z"/>
+<path class="ink" d="M70.6459 210.707C68.1637 210.707 65.8285 210.299 63.6403 209.483C61.4521 208.699 58.9046 207.572 55.9979 206.102C53.4504 204.829 51.6051 203.996 50.462 203.604V203.016C56.3408 201.677 62.4972 199.407 68.9312 196.206C75.3979 193.006 80.8031 189.674 85.1469 186.212C89.5234 182.75 91.7116 180.04 91.7116 178.08C91.7116 176.904 90.5032 175.141 88.0863 172.789C85.6695 170.438 82.0279 167.449 77.1616 163.824C78.4353 161.93 79.8233 159.431 81.3257 156.329C82.8607 153.226 84.0528 150.384 84.902 147.804H85.4899C85.6858 148.294 86.1104 149.192 86.7636 150.499C87.972 152.916 89.0008 155.169 89.85 157.259C90.7318 159.35 91.5156 161.799 92.2015 164.608C92.8873 167.417 93.2303 170.323 93.2303 173.328C93.2303 181.199 92.2341 187.943 90.2419 193.561C88.2496 199.211 85.5388 203.473 82.1095 206.347C78.7129 209.254 74.8917 210.707 70.6459 210.707Z"/>
+<path class="ink" d="M121.933 141.24C125.656 141.24 128.857 142.497 131.535 145.012C134.213 147.494 136.254 151.07 137.659 155.741C139.063 160.378 139.765 165.849 139.765 172.152C139.765 180.513 138.671 187.584 136.483 193.365C134.295 199.178 131.355 203.522 127.665 206.396C123.974 209.27 119.892 210.707 115.417 210.707C112.739 210.707 110.159 210.299 107.677 209.483C105.227 208.699 102.353 207.572 99.0547 206.102C98.7934 206.004 97.9606 205.645 96.5562 205.025C95.1845 204.437 93.9434 203.963 92.833 203.604V203.016C98.8098 201.971 105.358 200.028 112.478 197.186C119.598 194.345 125.624 191.095 130.555 187.437C135.487 183.812 137.953 180.334 137.953 177.002C137.953 174.03 137.594 171.189 136.875 168.478L136.532 168.576C136.369 173.41 134.817 177.198 131.878 179.942C128.939 182.652 124.84 184.008 119.582 184.008C109.686 184.008 104.738 178.472 104.738 167.4C104.738 162.73 105.44 158.402 106.844 154.418C108.249 150.433 110.257 147.249 112.87 144.865C115.483 142.448 118.504 141.24 121.933 141.24ZM120.169 166.763C123.011 166.763 125.526 166.584 127.714 166.224C129.935 165.833 132.417 165.114 135.16 164.069C133.593 160.966 131.47 158.566 128.792 156.867C126.114 155.169 123.043 154.32 119.582 154.32C117.361 154.32 115.287 154.728 113.36 155.545C111.466 156.361 109.947 157.341 108.804 158.484C107.661 159.627 107.089 160.607 107.089 161.423C107.089 162.305 107.497 163.154 108.314 163.971C109.163 164.787 110.551 165.457 112.478 165.98C114.438 166.502 117.001 166.763 120.169 166.763Z"/>
+<path class="swirl" d="M142.729 141.014C139.951 138.535 138.401 135.465 138.078 131.805C137.734 128.17 138.593 124.143 140.656 119.724C142.697 115.329 145.816 110.781 150.014 106.079C155.583 99.8417 161.108 95.2959 166.591 92.441C172.095 89.5618 177.18 88.2792 181.847 88.5932C186.515 88.9072 190.517 90.5542 193.855 93.5342C195.852 95.3178 197.505 97.3408 198.813 99.603C200.118 101.819 201.512 104.574 202.993 107.867C203.123 108.114 203.505 108.937 204.139 110.335C204.771 111.687 205.381 112.867 205.97 113.874L205.579 114.313C200.425 111.112 194.246 108.2 187.042 105.578C179.839 102.956 173.179 101.367 167.064 100.811C160.971 100.231 156.815 101.183 154.597 103.668C152.617 105.885 150.993 108.244 149.723 110.744L150.045 110.9C153.386 107.403 157.066 105.61 161.086 105.521C165.084 105.457 169.044 107.175 172.966 110.677C180.348 117.268 180.352 124.693 172.979 132.952C169.868 136.436 166.462 139.196 162.761 141.233C159.06 143.27 155.441 144.308 151.904 144.346C148.345 144.409 145.287 143.298 142.729 141.014ZM161.043 123.149C158.923 121.257 156.928 119.716 155.056 118.527C153.139 117.34 150.809 116.223 148.066 115.175C147.169 118.534 147.154 121.738 148.021 124.789C148.887 127.839 150.612 130.517 153.194 132.823C154.851 134.302 156.67 135.379 158.651 136.053C160.608 136.706 162.393 136.986 164.007 136.895C165.621 136.804 166.7 136.453 167.244 135.844C167.831 135.186 168.092 134.281 168.027 133.128C167.937 131.954 167.348 130.53 166.258 128.857C165.145 127.162 163.406 125.259 161.043 123.149Z"/>
+</svg></div>
+    </div>
+  </section>
+
+
+  <section class="section story" id="story">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">قصتنا</span>
+        <h2>شاي البيت، من بيتنا إلى بيتك</h2>
+        <div class="body">
+          <p>شاي وورق مشروع عائلي بدأ من تجارب والدي في توليف الشاي الأسود. أعجبت توليفاته الأهل والأصدقاء، ومع أكثر من ثماني سنوات من الخبرة تحوّلت إلى مشروع يقدّم شاياً أصيلاً بنكهات متوازنة، فيه دفء البيت وعنايته.</p>
+          <p>نحن عائلة نشرب الشاي من دون سكّر ولا إضافة ماء، لذلك تمرّ كل توليفة نبيعها بتجربة تذوّق في البيت، ونعدّل عليها إن احتاجت. ولأمي الدور الكبير في الحكم على الطعم.</p>
+        </div>
+        <blockquote class="vision">رؤيتنا أن يصل الشاي الذي نحبّه في البيت إلى كل بيت، ويكون جزءاً من لحظات الراحة والبهجة اليومية.<cite>عائلة شاي وورق</cite></blockquote>
+      </div>
+      <div class="facts">
+        <div class="fact"><span class="v">+٨</span><div><b>سنوات في التوليف</b><span>خبرة بدأت في البيت.</span></div></div>
+        <div class="fact"><span class="v">٤</span><div><b>أنواع شاي في توليفاتنا</b><span>هندي وسيلاني وإنجليزي، يجمعها الزعفران.</span></div></div>
+        <div class="fact"><span class="v">٠</span><div><b>سكّر وماء مضاف</b><span>هكذا نشرب الشاي نحن، وهكذا نختبر كل توليفة.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section name-story">
+    <div class="wrap">
+      <div class="etym" aria-label="من تشا إلى تشاي إلى شاي">
+        <div><span>Cha</span><small>الصينية</small></div>
+        <span class="arrow">→</span>
+        <div><span>Chai</span><small>الهندية</small></div>
+        <span class="arrow">→</span>
+        <div class="ours"><span>Shay</span><small>نحن</small></div>
+      </div>
+      <div>
+        <h2 class="story-title">لماذا <span dir="ltr">Sh</span>؟</h2>
+        <p>كلمة «تشاي» هندية، أخذتها الهند من الكلمة الصينية «تشا». ونحن نقول «شاي»، ولهذا كتبنا اسمنا بالحرفين sh بدل ch.</p>
+        <p>والشاي اسم يُطلق على الشجرة وأوراقها والشراب الذي يُصنع منها. تُقطف أوراقه باليد وهي يانعة، وأفضلها الأوراق الرقيقة القريبة من القمة.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="diffs">
+        <div class="diff">
+          <span class="tag">الزعفران</span>
+          <h3>في قلب كل توليفة</h3>
+          <p>مقدار موزون من شعيرات الزعفران يضبط النكهة ويحفظ لون الشاي.</p>
+        </div>
+        <div class="diff">
+          <span class="tag">بلا بشوعة</span>
+          <h3>طعم ناعم من أول رشفة</h3>
+          <p>نوازن بين أنواع الأوراق حتى يخرج الشاي حلواً بلا مرارة، يُشرب بلا سكر أو بقليل منه.</p>
+        </div>
+        <div class="diff">
+          <span class="tag">لكل وقت</span>
+          <h3>من الضحى إلى العصاري</h3>
+          <p>توليفة خفيفة للصباح، وأخرى ثقيلة لمن يشرب الشاي في كل وقت، وما بينهما.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section blends-sec" id="blends">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" style="margin:0">التوليفات</span>
+        <h2>أربع توليفات، من الثقيلة إلى الخفيفة</h2>
+        <div class="scale-note">ثقيلة <i aria-hidden="true"></i> خفيفة</div>
+      </div>
+      <div class="blends">
+        <article class="blend">
+          <div class="ph has-img"><img src="assets/img/omran.webp" alt="أوراق شاي عمران السوداء الكاملة على خلفية حمراء" loading="lazy" width="1200" height="1200"><span class="ph-num">١</span></div>
+          <div class="blend-body">
+            <div class="blend-top"><h3>شاي عمران</h3><span class="idx">١</span></div>
+            <div class="strength"><span class="dots" aria-hidden="true"><b class="on"></b><b class="on"></b><b class="on"></b></span>ثقيلة</div>
+            <ul class="notes"><li>جريئة</li><li>عميقة</li><li>لون عسلي</li></ul>
+            <p>نكهة ثقيلة ولون عسلي، تُشرب بلا سكر أو بقليل منه. لمن يحب الشاي الذي «يدنّق الراس».</p>
+            <div class="when">الوقت: <strong>لكل وقت</strong></div>
+            <a class="btn btn-red" href="https://wa.me/966507701166?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%AA%D9%88%D9%84%D9%8A%D9%81%D8%A9%20%D8%B4%D8%A7%D9%8A%20%D8%B9%D9%85%D8%B1%D8%A7%D9%86" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></svg>اطلب شاي عمران</a>
+          </div>
+        </article>
+        <article class="blend">
+          <div class="ph has-img"><img src="assets/img/asdiqaa.webp" alt="أوراق شاي الأصدقاء مع خيوط الزعفران على خلفية بلون الخوخ" loading="lazy" width="1200" height="1200"><span class="ph-num on-light">٢</span></div>
+          <div class="blend-body">
+            <div class="blend-top"><h3>شاي الأصدقاء</h3><span class="idx">٢</span></div>
+            <div class="strength"><span class="dots" aria-hidden="true"><b class="on"></b><b class="on"></b><b class=""></b></span>متوسطة</div>
+            <ul class="notes"><li>زعفران نفّاذ</li><li>حلوة بلا مرارة</li><li>سريعة التخدير</li></ul>
+            <p>أوراق سيلانية كاملة ومكسورة مع زعفران قوي. طعمها حلو بلا مرارة، يشجعك على شربها بلا سكر.</p>
+            <div class="when">الوقت: <strong>المساء، وأي وقت</strong></div>
+            <a class="btn btn-red" href="https://wa.me/966507701166?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%AA%D9%88%D9%84%D9%8A%D9%81%D8%A9%20%D8%B4%D8%A7%D9%8A%20%D8%A7%D9%84%D8%A3%D8%B5%D8%AF%D9%82%D8%A7%D8%A1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></svg>اطلب شاي الأصدقاء</a>
+          </div>
+        </article>
+        <article class="blend">
+          <div class="ph has-img"><img src="assets/img/asari.webp" alt="أوراق شاي العصاري على خلفية حمراء" loading="lazy" width="1200" height="1200"><span class="ph-num">٣</span></div>
+          <div class="blend-body">
+            <div class="blend-top"><h3>شاي العصاري</h3><span class="idx">٣</span></div>
+            <div class="strength"><span class="dots" aria-hidden="true"><b class="on"></b><b class="on"></b><b class=""></b></span>متوسطة</div>
+            <ul class="notes"><li>متوازنة</li><li>ناعمة</li><li>زعفران موزون</li></ul>
+            <p>شاي فاخر مع مقدار موزون من شعيرات الزعفران، يوازن النكهة ويحفظ لون الشاي.</p>
+            <div class="when">الوقت: <strong>لكل الأوقات</strong></div>
+            <a class="btn btn-red" href="https://wa.me/966507701166?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%AA%D9%88%D9%84%D9%8A%D9%81%D8%A9%20%D8%B4%D8%A7%D9%8A%20%D8%A7%D9%84%D8%B9%D8%B5%D8%A7%D8%B1%D9%8A" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></svg>اطلب شاي العصاري</a>
+          </div>
+        </article>
+        <article class="blend">
+          <div class="ph has-img"><img src="assets/img/duha.webp" alt="أوراق شاي الضحى مع خيوط الزعفران على خلفية حمراء" loading="lazy" width="1200" height="1200"><span class="ph-num">٤</span></div>
+          <div class="blend-body">
+            <div class="blend-top"><h3>شاي الضحى</h3><span class="idx">٤</span></div>
+            <div class="strength"><span class="dots" aria-hidden="true"><b class="on"></b><b class=""></b><b class=""></b></span>خفيفة</div>
+            <ul class="notes"><li>خفيفة</li><li>منعشة</li><li>أربعة أنواع</li></ul>
+            <p>أربعة أنواع من الشاي الهندي والسيلاني والإنجليزي مع طشّة خيوط زعفران.</p>
+            <div class="when">الوقت: <strong>الصباح واستراحة العمل</strong></div>
+            <a class="btn btn-red" href="https://wa.me/966507701166?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%AA%D9%88%D9%84%D9%8A%D9%81%D8%A9%20%D8%B4%D8%A7%D9%8A%20%D8%A7%D9%84%D8%B6%D8%AD%D9%89" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></svg>اطلب شاي الضحى</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section brew" id="brew">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">طريقة التحضير</span>
+        <h2 style="font-family:var(--font-display);font-size:var(--step-3);line-height:1.3">شاي الغوري، على مهل</h2>
+        <p style="margin-top:1rem;color:var(--ink-soft);max-width:30rem">الطريقة نفسها لكل التوليفات. السرّ في النار الهادئة والصبر.</p>
+        <div class="measures">
+          <div class="measure"><span class="v">٦</span><span class="u">غرام شاي، أو ملعقة طعام ممتلئة</span></div>
+          <div class="measure"><span class="v">٥٠٠</span><span class="u">مل ماء</span></div>
+          <div class="measure"><span class="v">٣٠</span><span class="u">دقيقة على نار هادئة</span></div>
+        </div>
+      </div>
+      <div>
+        <ol class="steps">
+          <li><div><h3>ضع الشاي في الغوري</h3><p>ملعقة طعام ممتلئة، أو ٦ غرام.</p></div></li>
+          <li><div><h3>صبّ الماء المغلي</h3><p>٥٠٠ مل من الماء المغلي فوق الشاي في الغوري.</p></div></li>
+          <li><div><h3>ضع الغوري على نار هادئة</h3><p>واتركه يتخدّر ٣٠ دقيقة.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section biz" id="craft">
+    <svg class="biz-bg" viewBox="136 86 72 60" aria-hidden="true"><path class="swirl" d="M142.729 141.014C139.951 138.535 138.401 135.465 138.078 131.805C137.734 128.17 138.593 124.143 140.656 119.724C142.697 115.329 145.816 110.781 150.014 106.079C155.583 99.8417 161.108 95.2959 166.591 92.441C172.095 89.5618 177.18 88.2792 181.847 88.5932C186.515 88.9072 190.517 90.5542 193.855 93.5342C195.852 95.3178 197.505 97.3408 198.813 99.603C200.118 101.819 201.512 104.574 202.993 107.867C203.123 108.114 203.505 108.937 204.139 110.335C204.771 111.687 205.381 112.867 205.97 113.874L205.579 114.313C200.425 111.112 194.246 108.2 187.042 105.578C179.839 102.956 173.179 101.367 167.064 100.811C160.971 100.231 156.815 101.183 154.597 103.668C152.617 105.885 150.993 108.244 149.723 110.744L150.045 110.9C153.386 107.403 157.066 105.61 161.086 105.521C165.084 105.457 169.044 107.175 172.966 110.677C180.348 117.268 180.352 124.693 172.979 132.952C169.868 136.436 166.462 139.196 162.761 141.233C159.06 143.27 155.441 144.308 151.904 144.346C148.345 144.409 145.287 143.298 142.729 141.014ZM161.043 123.149C158.923 121.257 156.928 119.716 155.056 118.527C153.139 117.34 150.809 116.223 148.066 115.175C147.169 118.534 147.154 121.738 148.021 124.789C148.887 127.839 150.612 130.517 153.194 132.823C154.851 134.302 156.67 135.379 158.651 136.053C160.608 136.706 162.393 136.986 164.007 136.895C165.621 136.804 166.7 136.453 167.244 135.844C167.831 135.186 168.092 134.281 168.027 133.128C167.937 131.954 167.348 130.53 166.258 128.857C165.145 127.162 163.406 125.259 161.043 123.149Z"/></svg>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow" style="color:var(--on-red);opacity:.85">للأعمال</span>
+        <h2>توليفة خاصة باسم مشروعك</h2>
+        <p>نختار الأوراق ونزن الزعفران ونوازن النكهة حتى نصل إلى توليفة تناسب ضيوفك وهوية مكانك. تُضاف رسوم الصنعة، ونتفق على التفاصيل والسعر في واتساب.</p>
+        <ul aria-label="لمن هذه الخدمة">
+          <li>المقاهي</li><li>الفنادق</li><li>المكاتب والشركات</li><li>محلات الهدايا</li>
+        </ul>
+        <a class="btn" href="https://wa.me/966507701166?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B5%D9%86%D8%A7%D8%B9%D8%A9%20%D8%AA%D9%88%D9%84%D9%8A%D9%81%D8%A9%20%D8%B4%D8%A7%D9%8A%20%D8%AE%D8%A7%D8%B5%D8%A9%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></svg>اطلب توليفة خاصة</a>
+      </div>
+      <div class="biz-steps" aria-label="كيف نعمل">
+        <div><b>نسمع منك</b><span>ذوق ضيوفك، ووقت تقديم الشاي، والنكهة التي تريدها.</span></div>
+        <div><b>نصنع ونجرّب</b><span>نوازن الأوراق والزعفران ونرسل لك عيّنة.</span></div>
+        <div><b>نجهّز طلبك</b><span>بالكمية التي تحتاجها، وبالنكهة نفسها في كل مرة.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="journal">
+    <div class="wrap">
+      <div class="ig-head">
+        <div>
+          <span class="eyebrow">من حسابنا</span>
+          <h2>آخر ما نشرنا</h2>
+        </div>
+        <a class="handle" href="https://www.instagram.com/shayowrq/" target="_blank" rel="noopener">@shayowrq</a>
+      </div>
+      <div class="ig-grid">
+        <a class="ig ig-img" href="https://www.instagram.com/p/Dew6ZxziKmk/" target="_blank" rel="noopener"><img src="assets/img/ig/post-6.webp" alt="منشور: كلمة الشاي في عناوين الكتب، الجزء الثاني" loading="lazy" width="720" height="960"></a>
+        <a class="ig ig-img" href="https://www.instagram.com/p/DeUplfjjHSY/" target="_blank" rel="noopener"><img src="assets/img/ig/post-5.webp" alt="منشور: كلمة الشاي في عناوين الكتب" loading="lazy" width="720" height="960"></a>
+        <a class="ig ig-img" href="https://www.instagram.com/p/DU_QZjajKsa/" target="_blank" rel="noopener"><img src="assets/img/ig/post-4.webp" alt="منشور: الزعفران، الذهب الأحمر" loading="lazy" width="720" height="960"></a>
+        <a class="ig ig-img" href="https://www.instagram.com/p/DPQTTaoDG8m/" target="_blank" rel="noopener"><img src="assets/img/ig/post-3.webp" alt="منشور: محاورة بين القهوة والشاي" loading="lazy" width="720" height="960"></a>
+        <a class="ig ig-img" href="https://www.instagram.com/p/DN3JEhI2I2-/" target="_blank" rel="noopener"><img src="assets/img/ig/post-2.webp" alt="منشور: كيف أشتري الشاي المناسب لمزاجي؟" loading="lazy" width="720" height="960"></a>
+        <a class="ig ig-img" href="https://www.instagram.com/p/DNYmseRMz7g/" target="_blank" rel="noopener"><img src="assets/img/ig/post-1.webp" alt="منشور: كلمة الشاي" loading="lazy" width="720" height="960"></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section closing">
+    <div class="wrap">
+      <h2>اختر توليفتك</h2>
+      <p>نستقبل الطلبات عبر واتساب، ونرد عليك بالتوليفات المتوفرة وطريقة التوصيل.</p>
+      <div class="actions">
+        <a class="btn btn-red" href="https://wa.me/966507701166?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%B4%D8%A7%D9%8A%20%D9%85%D9%86%20%D8%B4%D8%A7%D9%8A%20%D9%88%D9%88%D8%B1%D9%82" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></svg>اطلب عبر واتساب</a>
+        <span class="phone">+966 50 770 1166</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand logo" href="#top" aria-label="شاي وورق"><svg viewBox="0 0 206 211" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<path class="ink" d="M63.3282 25.5238C66.6595 25.5238 69.2886 26.5363 71.2156 28.5612C73.1425 30.5534 74.106 33.1989 74.106 36.4976C74.106 38.7184 73.6814 41.0046 72.8322 43.3562H72.2443C72.2443 41.8865 71.2319 40.727 69.207 39.8779C67.182 39.0287 64.6346 38.6041 61.5645 38.6041C57.8413 38.6041 54.3793 39.388 51.1786 40.9556C48.0106 42.4907 45.4795 44.3686 43.5852 46.5895C41.7236 48.7777 40.7928 50.7373 40.7928 52.4683C40.7928 54.2319 42.0338 55.5383 44.516 56.3875C46.9982 57.204 50.2968 57.6122 54.412 57.6122H60.7317C64.3896 57.6122 67.2637 58.0368 69.3539 58.886C71.4442 59.7351 72.9465 61.1069 73.861 63.0011C74.7755 64.8628 75.2327 67.4102 75.2327 70.6436C75.2327 77.7961 73.861 84.0015 71.1176 89.2598C68.3741 94.5181 64.3243 98.5679 58.9681 101.409C53.6445 104.251 47.1778 105.671 39.568 105.671C31.2397 105.671 24.9037 103.418 20.5599 98.9108C16.2161 94.4364 14.0442 87.9861 14.0442 79.5598C14.0442 70.7089 16.0201 62.005 19.972 53.4481H21.1968C19.2045 58.8697 18.2084 64.2096 18.2084 69.4678C18.2084 75.1833 20.217 79.5924 24.2341 82.6951C28.2513 85.7652 33.9668 87.3002 41.3806 87.3002C48.9251 87.3002 55.0652 86.6633 59.8009 85.3896C64.5366 84.1485 67.9332 82.6298 69.9908 80.8335C72.0484 79.0045 73.0772 77.1919 73.0772 75.3956C73.0772 74.7751 72.1464 74.3342 70.2847 74.0729C68.4231 73.7789 64.9285 73.632 59.8009 73.632H53.2362C49.5456 73.632 46.5736 73.2564 44.32 72.5052C42.0992 71.7214 40.4498 70.4313 39.372 68.635C38.3269 66.806 37.8044 64.3075 37.8044 61.1395C37.8044 55.9792 39.0128 50.6067 41.4296 45.0218C43.8465 39.437 47.0145 34.7992 50.9337 31.1087C54.8855 27.3854 59.017 25.5238 63.3282 25.5238ZM25.9488 127.864C26.5367 126.819 27.2878 125.006 28.2023 122.426C29.1168 119.879 29.7373 117.935 30.0639 116.596C33.8852 116.335 37.6901 116.123 41.4786 115.959C45.2672 115.829 48.2066 115.763 50.2968 115.763C53.1056 115.763 55.1795 116.106 56.5185 116.792C57.8903 117.511 58.5761 118.752 58.5761 120.515C58.5761 121.103 58.4781 121.74 58.2822 122.426C58.1189 123.145 57.8576 124.043 57.4983 125.12C56.8778 127.047 56.4532 128.68 56.2246 130.019H55.6367C55.6367 128.876 55.0325 128.093 53.8241 127.668C52.6483 127.243 50.6724 127.031 47.8963 127.031C45.9367 127.031 42.5564 127.096 37.7554 127.227C32.9544 127.39 29.0188 127.603 25.9488 127.864Z"/>
+<path class="ink" d="M99.2126 84.3118C94.7382 84.3118 91.1782 83.6096 88.5328 82.2052C85.8873 80.8008 83.895 78.433 82.556 75.1017C81.2496 71.7704 80.4657 67.1163 80.2045 61.1395C79.8125 51.3415 79.4043 43.7154 78.9797 38.2612C78.5878 32.807 78.1305 28.5612 77.608 25.5238C77.0854 22.4864 76.3669 19.1224 75.4524 15.4319C77.412 13.4723 79.4696 11.0717 81.6252 8.23032C83.7807 5.35624 85.6913 2.6128 87.357 0H87.9449C87.9449 1.20842 88.0102 3.47829 88.1408 6.80961C88.4021 11.4473 88.5328 16.1014 88.5328 20.7718C88.5328 23.6785 88.4348 28.6592 88.2388 35.7137C88.0428 43.4215 87.9449 49.3329 87.9449 53.4481C87.9449 57.6612 89.0716 60.7966 91.3252 62.8542C93.6114 64.8791 97.2366 65.8916 102.201 65.8916L99.2126 84.3118Z"/>
+<path class="ink" d="M161.647 38.9471C162.627 41.1353 163.46 43.2092 164.146 45.1688C164.864 47.1284 165.501 49.5452 166.056 52.4193C166.612 55.2607 166.889 58.3634 166.889 61.7274C166.889 68.9453 165.681 74.5138 163.264 78.433C160.88 82.3522 157.336 84.3118 152.633 84.3118C144.991 84.3118 141.169 80.2783 141.169 72.2113C141.169 71.0355 141.235 69.9251 141.365 68.8799H140.778C140.222 74.0076 138.638 77.8615 136.025 80.4416C133.445 83.0217 130.277 84.3118 126.521 84.3118C123.419 84.3118 120.986 83.4137 119.222 81.6173C117.491 79.821 116.625 77.0939 116.625 73.436C116.625 71.8683 116.756 70.3496 117.017 68.8799H116.429C115.548 74.1382 113.653 78.0247 110.747 80.5396C107.873 83.0544 104.019 84.3118 99.185 84.3118C98.2705 84.3118 97.552 83.8382 97.0294 82.8911C96.5069 81.9113 96.2456 80.4089 96.2456 78.384C96.2456 74.3015 96.7845 71.1988 97.8623 69.0759C98.9074 66.953 100.344 65.8916 102.173 65.8916C105.701 65.8916 108.558 65.5486 110.747 64.8628C112.968 64.1769 114.764 62.9358 116.136 61.1395C117.54 59.3432 118.634 56.7794 119.418 53.4481H120.594C120.398 55.1138 119.924 58.5431 119.173 63.736C121.361 65.173 124.594 65.8916 128.873 65.8916C131.91 65.8916 134.343 65.516 136.172 64.7648C138.034 63.9809 139.504 62.7072 140.582 60.9436C141.692 59.1473 142.541 56.6488 143.129 53.4481H144.354L143.031 63.3441C144.011 64.1279 145.448 64.7485 147.342 65.2057C149.236 65.6629 151.408 65.8916 153.858 65.8916C155.719 65.8916 157.499 65.7446 159.198 65.4506C160.896 65.124 162.268 64.7321 163.313 64.2749C164.358 63.785 164.881 63.3441 164.881 62.9522C164.881 62.299 164.048 61.1885 162.382 59.6208C160.749 58.0532 157.695 55.5873 153.221 52.2233C154.462 50.3617 155.752 48.0755 157.091 45.3647C158.43 42.654 159.524 39.9922 160.374 37.3794H160.961L161.647 38.9471ZM138.965 26.6996C137.887 25.6218 136.466 24.4134 134.703 23.0743C132.939 21.7352 131.388 20.7718 130.049 20.1839V19.596L136.613 11.2677C138.312 12.0842 140.026 13.2273 141.757 14.697C143.521 16.134 144.778 17.3588 145.53 18.3713L138.965 26.6996ZM154.397 29.443C153.776 30.5208 153.009 32.2681 152.094 34.6849C151.18 37.0691 150.576 38.8817 150.282 40.1228C146.46 40.3841 142.655 40.5964 138.867 40.7597C135.078 40.8903 132.139 40.9556 130.049 40.9556C127.24 40.9556 125.15 40.6127 123.778 39.9269C122.439 39.2083 121.769 37.9673 121.769 36.2036C121.769 35.6484 121.851 35.0605 122.014 34.44C122.178 33.8194 122.439 33.0193 122.798 32.0395C123.484 30.0472 123.925 28.4632 124.121 27.2874H124.709C124.709 28.4305 125.297 29.2144 126.472 29.639C127.681 30.0635 129.673 30.2758 132.449 30.2758C134.409 30.2758 137.789 30.2105 142.59 30.0799C147.391 29.9166 151.327 29.7043 154.397 29.443Z"/>
+<path class="ink" d="M42.1804 135.312C45.9363 135.312 49.137 136.602 51.7824 139.182C54.4606 141.762 56.4855 145.534 57.8572 150.499C59.2616 155.463 59.9638 161.489 59.9638 168.576C59.9638 177.296 58.5594 184.579 55.7506 190.426C52.9419 196.272 48.9573 200.615 43.7971 203.457C38.6694 206.331 32.5784 207.768 25.5238 207.768C17.2608 207.768 10.9411 205.498 6.56466 200.958C2.18822 196.451 0 190.017 0 181.656C0 172.773 1.97593 164.053 5.92779 155.496H7.15254C5.16028 160.95 4.16415 166.29 4.16415 171.515C4.16415 175.271 5.0623 178.488 6.8586 181.166C8.6549 183.812 11.284 185.837 14.746 187.241C18.208 188.646 22.4048 189.348 27.3364 189.348C33.1826 189.348 38.4572 188.531 43.1602 186.898C47.8632 185.265 51.5375 183.208 54.1829 180.726C56.8611 178.211 58.2001 175.745 58.2001 173.328C58.2001 169.474 57.7429 165.914 56.8284 162.648H56.7794C56.6161 167.482 55.0648 171.27 52.1254 174.014C49.186 176.725 45.0708 178.08 39.7799 178.08C29.8839 178.08 24.9359 172.528 24.9359 161.423C24.9359 156.786 25.6381 152.475 27.0425 148.49C28.4469 144.506 30.4555 141.321 33.0683 138.937C35.7137 136.52 38.7511 135.312 42.1804 135.312ZM40.3678 160.836C43.2092 160.836 45.7077 160.656 47.8632 160.297C50.0515 159.905 52.4683 159.203 55.1138 158.19C53.5461 155.022 51.4558 152.605 48.843 150.94C46.2302 149.241 43.2092 148.392 39.7799 148.392C37.559 148.392 35.5014 148.8 33.6071 149.617C31.7129 150.433 30.1942 151.413 29.0511 152.556C27.908 153.699 27.3364 154.679 27.3364 155.496C27.3364 156.378 27.7447 157.227 28.5612 158.043C29.3777 158.86 30.7494 159.529 32.6763 160.052C34.6359 160.574 37.1997 160.836 40.3678 160.836Z"/>
+<path class="ink" d="M70.6459 210.707C68.1637 210.707 65.8285 210.299 63.6403 209.483C61.4521 208.699 58.9046 207.572 55.9979 206.102C53.4504 204.829 51.6051 203.996 50.462 203.604V203.016C56.3408 201.677 62.4972 199.407 68.9312 196.206C75.3979 193.006 80.8031 189.674 85.1469 186.212C89.5234 182.75 91.7116 180.04 91.7116 178.08C91.7116 176.904 90.5032 175.141 88.0863 172.789C85.6695 170.438 82.0279 167.449 77.1616 163.824C78.4353 161.93 79.8233 159.431 81.3257 156.329C82.8607 153.226 84.0528 150.384 84.902 147.804H85.4899C85.6858 148.294 86.1104 149.192 86.7636 150.499C87.972 152.916 89.0008 155.169 89.85 157.259C90.7318 159.35 91.5156 161.799 92.2015 164.608C92.8873 167.417 93.2303 170.323 93.2303 173.328C93.2303 181.199 92.2341 187.943 90.2419 193.561C88.2496 199.211 85.5388 203.473 82.1095 206.347C78.7129 209.254 74.8917 210.707 70.6459 210.707Z"/>
+<path class="ink" d="M121.933 141.24C125.656 141.24 128.857 142.497 131.535 145.012C134.213 147.494 136.254 151.07 137.659 155.741C139.063 160.378 139.765 165.849 139.765 172.152C139.765 180.513 138.671 187.584 136.483 193.365C134.295 199.178 131.355 203.522 127.665 206.396C123.974 209.27 119.892 210.707 115.417 210.707C112.739 210.707 110.159 210.299 107.677 209.483C105.227 208.699 102.353 207.572 99.0547 206.102C98.7934 206.004 97.9606 205.645 96.5562 205.025C95.1845 204.437 93.9434 203.963 92.833 203.604V203.016C98.8098 201.971 105.358 200.028 112.478 197.186C119.598 194.345 125.624 191.095 130.555 187.437C135.487 183.812 137.953 180.334 137.953 177.002C137.953 174.03 137.594 171.189 136.875 168.478L136.532 168.576C136.369 173.41 134.817 177.198 131.878 179.942C128.939 182.652 124.84 184.008 119.582 184.008C109.686 184.008 104.738 178.472 104.738 167.4C104.738 162.73 105.44 158.402 106.844 154.418C108.249 150.433 110.257 147.249 112.87 144.865C115.483 142.448 118.504 141.24 121.933 141.24ZM120.169 166.763C123.011 166.763 125.526 166.584 127.714 166.224C129.935 165.833 132.417 165.114 135.16 164.069C133.593 160.966 131.47 158.566 128.792 156.867C126.114 155.169 123.043 154.32 119.582 154.32C117.361 154.32 115.287 154.728 113.36 155.545C111.466 156.361 109.947 157.341 108.804 158.484C107.661 159.627 107.089 160.607 107.089 161.423C107.089 162.305 107.497 163.154 108.314 163.971C109.163 164.787 110.551 165.457 112.478 165.98C114.438 166.502 117.001 166.763 120.169 166.763Z"/>
+<path class="swirl" d="M142.729 141.014C139.951 138.535 138.401 135.465 138.078 131.805C137.734 128.17 138.593 124.143 140.656 119.724C142.697 115.329 145.816 110.781 150.014 106.079C155.583 99.8417 161.108 95.2959 166.591 92.441C172.095 89.5618 177.18 88.2792 181.847 88.5932C186.515 88.9072 190.517 90.5542 193.855 93.5342C195.852 95.3178 197.505 97.3408 198.813 99.603C200.118 101.819 201.512 104.574 202.993 107.867C203.123 108.114 203.505 108.937 204.139 110.335C204.771 111.687 205.381 112.867 205.97 113.874L205.579 114.313C200.425 111.112 194.246 108.2 187.042 105.578C179.839 102.956 173.179 101.367 167.064 100.811C160.971 100.231 156.815 101.183 154.597 103.668C152.617 105.885 150.993 108.244 149.723 110.744L150.045 110.9C153.386 107.403 157.066 105.61 161.086 105.521C165.084 105.457 169.044 107.175 172.966 110.677C180.348 117.268 180.352 124.693 172.979 132.952C169.868 136.436 166.462 139.196 162.761 141.233C159.06 143.27 155.441 144.308 151.904 144.346C148.345 144.409 145.287 143.298 142.729 141.014ZM161.043 123.149C158.923 121.257 156.928 119.716 155.056 118.527C153.139 117.34 150.809 116.223 148.066 115.175C147.169 118.534 147.154 121.738 148.021 124.789C148.887 127.839 150.612 130.517 153.194 132.823C154.851 134.302 156.67 135.379 158.651 136.053C160.608 136.706 162.393 136.986 164.007 136.895C165.621 136.804 166.7 136.453 167.244 135.844C167.831 135.186 168.092 134.281 168.027 133.128C167.937 131.954 167.348 130.53 166.258 128.857C165.145 127.162 163.406 125.259 161.043 123.149Z"/>
+</svg></a>
+    <nav aria-label="روابط الموقع">
+      <a href="#story">قصتنا</a>
+      <a href="#blends">التوليفات</a>
+      <a href="#brew">طريقة التحضير</a>
+      <a href="#craft">للأعمال</a>
+      <a href="https://www.instagram.com/shayowrq/" target="_blank" rel="noopener">إنستغرام</a>
+      <a href="https://wa.me/966507701166?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85" target="_blank" rel="noopener">واتساب</a>
+    </nav>
+    <span class="meta">© ٢٠٢٦ شاي وورق</span>
+  </div>
+</footer>
+
+</body>
+</html>
