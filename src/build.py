@@ -62,8 +62,8 @@ print('preview', len(out))
 import shutil, html
 dist = root/'dist'
 if dist.exists(): shutil.rmtree(dist)
-(dist/'assets/img/ig').mkdir(parents=True)
-for f in (root/'assets/img').rglob('*.webp'):
+(dist/'assets/img/ig').mkdir(parents=True); (dist/'assets/fonts').mkdir(parents=True)
+for f in list((root/'assets/img').rglob('*.webp'))+list((root/'assets/fonts').rglob('*.woff2')):
     dst = dist/f.relative_to(root); dst.parent.mkdir(parents=True, exist_ok=True); shutil.copy(f, dst)
 shutil.copy(root/'assets/logo-stacked.svg', dist/'favicon.svg')
 for name in ['og-image.jpg','apple-touch-icon.png','favicon-32.png']:

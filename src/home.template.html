@@ -1,10 +1,12 @@
 <title>شاي وورق</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="شاي وورق: أربع توليفات شاي بالزعفران، لكل مزاج ولكل وقت. الطلب عبر واتساب.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
 <style>
+@font-face { font-family: "Doran"; src: url("assets/fonts/doran-medium.woff2") format("woff2"); font-weight: 400 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Doran"; src: url("assets/fonts/doran-bold.woff2") format("woff2"); font-weight: 600 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "GT America Arabic"; src: url("assets/fonts/gt-regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "GT America Arabic"; src: url("assets/fonts/gt-medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "GT America Arabic"; src: url("assets/fonts/gt-bold.woff2") format("woff2"); font-weight: 600 900; font-style: normal; font-display: swap; }
 /* Layout: a tea-house catalog. Peach paper, black ink, one red mark (the و of the logo).
    Blends are numbered ١–٤ from heaviest to lightest, so the number is information. */
 :root {
@@ -17,8 +19,8 @@
   --red: #B44343;        /* brand red */
   --on-red: #FBE9D9;
   --red-band: #B44343;
-  --font-display: "Doran", "Amiri", "Noto Naskh Arabic", serif;
-  --font-body: "GT America Arabic", "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  --font-display: "Doran", "Noto Naskh Arabic", "Geeza Pro", serif;
+  --font-body: "GT America Arabic", "Segoe UI", Tahoma, "Geeza Pro", sans-serif;
   --step--1: .875rem;
   --step-0: 1.0625rem;
   --step-1: 1.3rem;
@@ -79,14 +81,57 @@ p { margin: 0; }
   border-bottom: 1px solid var(--line);
 }
 .site-header .wrap {
-  display: flex; align-items: center; gap: 1.5rem;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1.5rem;
   padding-block: .6rem;
 }
+.site-header .brand { justify-self: start; }
+.site-header .tg-desk { justify-self: end; }
+.nav .tg-mob { display: none; }
 .brand { display: inline-flex; color: var(--ink); }
 .brand svg { width: 2.6rem; height: auto; display: block; }
-.nav { display: flex; gap: 1.6rem; margin-inline-start: auto; }
+.nav { display: flex; align-items: center; gap: 1.6rem; }
 .nav a { text-decoration: none; font-weight: 500; font-size: var(--step--1); }
 .nav a:hover { color: var(--red); }
+
+/* ---------- mobile menu ---------- */
+.menu-btn {
+  display: none; align-items: center; justify-content: center;
+  width: 44px; height: 44px; padding: 0; margin: 0 -.4rem;
+  background: none; border: 0; cursor: pointer; color: var(--ink);
+  -webkit-tap-highlight-color: transparent;
+}
+.menu-btn:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; border-radius: 8px; }
+.menu-btn svg { width: 1.5rem; height: 1.5rem; }
+.menu-btn .i-close { display: none; }
+.site-header.open .menu-btn .i-open { display: none; }
+.site-header.open .menu-btn .i-close { display: block; }
+
+/* ---------- theme toggle ---------- */
+/* both options visible; the selected one is a red pill with icon + label, the other is icon only */
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0; margin: 0;
+  background: none; border: 0; cursor: pointer; color: var(--ink);
+  -webkit-tap-highlight-color: transparent;
+}
+.theme-toggle .track {
+  display: inline-flex; align-items: center; gap: .1rem; padding: .2rem; border-radius: 999px;
+  background: var(--card); box-shadow: inset 0 0 0 1px var(--line); transition: box-shadow .25s ease;
+}
+.theme-toggle:hover .track { box-shadow: inset 0 0 0 1px var(--red); }
+.theme-toggle:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; border-radius: 999px; }
+.theme-toggle .opt {
+  display: flex; align-items: center; justify-content: center; gap: .4rem;
+  min-width: 1.75rem; height: 1.75rem; padding-inline: .45rem; border-radius: 999px;
+  font: 500 .8rem/1 var(--font-body); color: var(--ink-soft); white-space: nowrap;
+  transition: background-color .25s ease, color .25s ease;
+}
+.theme-toggle .opt svg { width: .95rem; height: .95rem; flex: none; }
+.theme-toggle .opt .t { display: none; }
+:root:not([data-theme="dark"]) .theme-toggle .opt-day,
+:root[data-theme="dark"] .theme-toggle .opt-night { background: var(--red); color: var(--on-red); padding-inline: .7rem; }
+:root:not([data-theme="dark"]) .theme-toggle .opt-day .t,
+:root[data-theme="dark"] .theme-toggle .opt-night .t { display: inline; }
 
 .btn {
   display: inline-flex; align-items: center; gap: .55rem;
@@ -100,7 +145,6 @@ p { margin: 0; }
 .btn-red:hover { transform: translateY(-2px); }
 .btn-line { border: 1.5px solid currentColor; color: var(--ink); }
 .btn-line:hover { background: var(--ink); color: var(--paper); }
-.site-header .btn { padding: .55rem 1rem; }
 
 /* ---------- hero ---------- */
 .hero { background: var(--peach); overflow: hidden; }
@@ -291,8 +335,20 @@ p { margin: 0; }
   .ig-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 820px) {
-  .nav { display: none; }
-  .site-header .btn { margin-inline-start: auto; }
+  .menu-btn { display: inline-flex; }
+  .site-header .wrap { display: flex; gap: .6rem; }
+  .nav {
+    display: none; position: absolute; top: 100%; inset-inline: 0; margin: 0;
+    flex-direction: column; align-items: stretch; gap: 0; padding: .4rem var(--gutter-r) .8rem var(--gutter-l);
+    background: var(--peach); border-bottom: 1px solid var(--line);
+    box-shadow: 0 14px 24px -18px rgba(0,0,0,.45);
+  }
+  .site-header.open .nav { display: flex; }
+  .nav a { font-size: var(--step-0); padding: .95rem 0; border-bottom: 1px solid var(--line); }
+  .nav a:last-child { border-bottom: 0; }
+  .menu-btn { margin-inline-start: auto; }
+  .site-header .tg-desk { display: none; }
+  .nav .tg-mob { display: inline-flex; align-self: flex-start; margin-top: .7rem; }
   .hero .wrap, .name-story .wrap, .brew .wrap, .biz .wrap { grid-template-columns: 1fr; }
   .hero-mark { width: min(60%, 14rem); justify-self: start; order: -1; }
   .etym { justify-content: flex-start; }
@@ -315,20 +371,25 @@ p { margin: 0; }
 }
 </style>
 
+<script>(function(){var r=document.documentElement,t;try{t=localStorage.getItem("shayowrq-theme")}catch(e){}if(t!=="light"&&t!=="dark"){var h=new Date().getHours();t=(h>=6&&h<18)?"light":"dark"}r.setAttribute("data-theme",t)})();</script>
 <script>document.documentElement.lang="ar";document.documentElement.dir="rtl";</script>
 <header class="site-header">
   <div class="wrap">
     <a class="brand logo" href="#top" aria-label="شاي وورق، الصفحة الرئيسية">{{LOGO}}</a>
-    <nav class="nav" aria-label="القائمة الرئيسية">
+    <button class="menu-btn" type="button" aria-label="القائمة" aria-expanded="false" aria-controls="site-nav"><svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <nav class="nav" id="site-nav" aria-label="القائمة الرئيسية">
       <a href="#story">قصتنا</a>
       <a href="#blends">التوليفات</a>
       <a href="#brew">طريقة التحضير</a>
       <a href="#craft">للأعمال</a>
       <a href="#journal">المنشورات</a>
+      <button class="theme-toggle tg-mob" type="button" aria-label="الوضع الليلي" aria-pressed="false" title="تبديل الوضع الفاتح / الداكن"><span class="track"><span class="opt opt-day"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span class="t">النهار</span></span><span class="opt opt-night"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><span class="t">الليل</span></span></span></button>
     </nav>
-    <a class="btn btn-red" href="{{WA:السلام عليكم، أود طلب شاي من شاي وورق}}" target="_blank" rel="noopener">{{WAICON}}اطلب</a>
+    <button class="theme-toggle tg-desk" type="button" aria-label="الوضع الليلي" aria-pressed="false" title="تبديل الوضع الفاتح / الداكن"><span class="track"><span class="opt opt-day"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span class="t">النهار</span></span><span class="opt opt-night"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><span class="t">الليل</span></span></span></button>
   </div>
 </header>
+<script>(function(){var bs=document.querySelectorAll(".theme-toggle"),r=document.documentElement;function sync(){var d=r.getAttribute("data-theme")==="dark";bs.forEach(function(b){b.setAttribute("aria-pressed",d)})}sync();bs.forEach(function(b){b.addEventListener("click",function(){var n=r.getAttribute("data-theme")==="dark"?"light":"dark";r.setAttribute("data-theme",n);try{localStorage.setItem("shayowrq-theme",n)}catch(e){}sync()})})})();
+(function(){var h=document.querySelector(".site-header"),m=h.querySelector(".menu-btn");function set(o){h.classList.toggle("open",o);m.setAttribute("aria-expanded",o)}m.addEventListener("click",function(){set(!h.classList.contains("open"))});h.querySelectorAll(".nav a").forEach(function(a){a.addEventListener("click",function(){set(false)})});document.addEventListener("keydown",function(e){if(e.key==="Escape")set(false)});window.addEventListener("resize",function(){if(innerWidth>820)set(false)})})();</script>
 
 <main id="top">
   <section class="hero">
